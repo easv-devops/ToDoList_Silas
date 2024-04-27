@@ -1,0 +1,13 @@
+﻿C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\Controllers\ItemsController.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\Program.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\obj\Debug\net8.0\ToDoList_API.GlobalUsings.g.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\obj\Debug\net8.0\ToDoList_API.AssemblyInfo.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\obj\Debug\net8.0\ToDoList_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\appsettings.Development.json
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\appsettings.json
+C:\Users\aerom\RiderProjects\ToDoList\.dockerignore
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\Dockerfile
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\ToDoList_API.http
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\Properties\launchSettings.json
+C:\Users\aerom\RiderProjects\ToDoList\ToDoList_API\obj\Debug\net8.0\apphost.exe

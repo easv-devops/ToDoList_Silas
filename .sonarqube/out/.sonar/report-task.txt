@@ -1,0 +1,6 @@
+projectKey=easv-devops_ToDoList_Silas_AY8h6rwXEVvRW2O60E9U
+serverUrl=http://sonar.setgo.dk:9000
+serverVersion=10.3.0.82913
+dashboardUrl=http://sonar.setgo.dk:9000/dashboard?id=easv-devops_ToDoList_Silas_AY8h6rwXEVvRW2O60E9U
+ceTaskId=AY8h7PHjEVvRW2O60E9q
+ceTaskUrl=http://sonar.setgo.dk:9000/api/ce/task?id=AY8h7PHjEVvRW2O60E9q
