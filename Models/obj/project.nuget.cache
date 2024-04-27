@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CDLeOOpZ3aAi6e1l3dCp3RHCbzOBRziWGDnBapdepnNIBhTg90lGdiheYAdS6abenw1ny8i7N1fF+m3THgN8kA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aerom\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.1\\microsoft.netcore.app.ref.8.0.1.nupkg.sha512",
+    "C:\\Users\\aerom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.1\\microsoft.windowsdesktop.app.ref.8.0.1.nupkg.sha512",
+    "C:\\Users\\aerom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.1\\microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
