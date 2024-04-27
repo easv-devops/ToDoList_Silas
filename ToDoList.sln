@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList_Front", "ToDoList_Front\ToDoList_Front.csproj", "{B9DF1862-B758-4295-85A6-8C1C090F5F91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList_Front", "src\ToDoList_Front\ToDoList_Front.csproj", "{B9DF1862-B758-4295-85A6-8C1C090F5F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList_API", "ToDoList_API\ToDoList_API.csproj", "{90787B16-8E82-47A1-859A-AD9A27CCEBC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList_API", "src\ToDoList_API\ToDoList_API.csproj", "{90787B16-8E82-47A1-859A-AD9A27CCEBC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{F491874C-E9C3-49A8-9679-E8AA566CF2AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "src\Models\Models.csproj", "{F491874C-E9C3-49A8-9679-E8AA566CF2AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
