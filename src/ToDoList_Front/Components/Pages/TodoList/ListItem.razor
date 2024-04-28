@@ -1,6 +1,6 @@
 ﻿<div>
     <span>
-        <input type="checkbox" @bind="_item.is_completed" @bind:event="oninput" @oninput="OnUpdateCheckbox" />
+        <input type="checkbox" @bind="_item.is_completed" />
         <input type="text" @value="_item.text" @oninput="OnTextChanged" />
         <button @onclick="() => OnDelete(_item)">Delete</button>
     </span>
@@ -26,16 +26,6 @@
         await OnItemUpdate.InvokeAsync(item);
     }
     
-    private async void OnUpdateCheckbox(ChangeEventArgs e)
-    {
-        if (e.Value is null)
-        {
-            return;
-        }
-        _item.is_completed = (bool)e.Value;
-        await OnUpdate(_item);
-    }
-    
     private Timer? _debounceTimer;
 
     private void OnTextChanged(ChangeEventArgs e)
@@ -57,4 +47,5 @@
             Console.WriteLine(ex);
         }
     }
+
 }
