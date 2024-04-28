@@ -15,24 +15,17 @@ public class ItemsController : ControllerBase
     {
         _itemsService = itemsService;
     }
-
+    
     [HttpGet]
-    public IActionResult GetItems()
+    public Item[] GetItems()
     {
-        return Ok(_itemsService.GetItems());
+        return _itemsService.GetItems();
     }
     
     [HttpGet("{id}")]
-    public IActionResult GetItem(int id)
+    public Item GetItem(int id)
     {
-        try
-        {
-            return Ok(_itemsService.GetItem(id));
-        }
-        catch (Exception e)
-        {
-            return NotFound(e.Message);
-        }
+        return _itemsService.GetItem(id);
     }
     
     [HttpPost]
@@ -45,28 +38,14 @@ public class ItemsController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateItem(int id, ItemDTO item)
     {
-        try
-        {
-            _itemsService.UpdateItem(id, item);
-            return Ok();
-        }
-        catch (Exception e)
-        {
-            return NotFound(e.Message);
-        }
+        _itemsService.UpdateItem(id, item);
+        return Ok();
     }
     
     [HttpDelete("{id}")]
     public IActionResult DeleteItem(int id)
     {
-        try
-        {
-            _itemsService.DeleteItem(id);
-            return Ok();
-        }
-        catch (Exception e)
-        {
-            return NotFound(e.Message);
-        }
+        _itemsService.DeleteItem(id);
+        return Ok();
     }
 }

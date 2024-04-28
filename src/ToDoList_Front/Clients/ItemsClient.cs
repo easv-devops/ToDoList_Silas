@@ -17,13 +17,7 @@ public class ItemsClient
     public async Task<Item[]> GetItems()
     {
         var items = await _httpClient.GetFromJsonAsync<Item[]>("Items");
-        
-        if (items == null)
-        {
-            throw new Exception("No items found");
-        }
-
-        return items;
+        return items ?? Array.Empty<Item>();
     }
     
     public async Task<Item> GetItem(int id)
@@ -34,7 +28,7 @@ public class ItemsClient
         {
             throw new Exception("Item not found");
         }
-
+        
         return item;
     }
     
