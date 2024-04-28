@@ -2,7 +2,6 @@
 @using ToDoList_Front.Clients
 @rendermode InteractiveServer
 @inject ItemsClient ItemsClient
-@inject IJSRuntime JSRuntime
 
 <PageTitle>To-Do List</PageTitle>
 
@@ -18,7 +17,7 @@
     {
         <span>
             <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
-            <input id="@($"item-{item.id}")" type="text" @bind="item.text" @onblur="() => HandleItemUpdate(item)" @onkeydown="async e => await HandleKeyDown(e, item)" />
+            <input type="text" @oninput="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" value="@item.text" />
             <button @onclick="() => HandleItemDelete(item)">Delete</button>
         </span>
     }
@@ -40,9 +39,9 @@
         StateHasChanged();
     }
     
-    private async Task HandleItemUpdate(Item item)
+    private async Task HandleItemUpdate(string newText, Item item)
     {
-        ItemDTO itemDto = new ItemDTO(item.text, item.is_completed, item.completed_date);
+        ItemDTO itemDto = new ItemDTO(newText, item.is_completed, item.completed_date);
         await ItemsClient.UpdateItem(item.id, itemDto);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
@@ -54,14 +53,6 @@
         await ItemsClient.UpdateItem(item.id, itemDto);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
-    }
-    
-    private async Task HandleKeyDown(KeyboardEventArgs e, Item item)
-    {
-        if (e.Key == "Enter")
-        {
-            await JSRuntime.InvokeVoidAsync("blurElement", $"item-{item.id}");
-        }
     }
     
     private async Task TestAddItem()
