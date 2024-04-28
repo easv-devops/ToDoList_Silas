@@ -33,6 +33,7 @@ else
 }
 
 <button @onclick="TestAdd">Add</button>
+<button @onclick="TestUpdate">Update</button>
 
 @code {
     private Item[]? _items;
@@ -46,6 +47,14 @@ else
     {
         ItemDTO item = new("Test", false, null);
         await ItemsClient.CreateItem(item);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+    
+    private async void TestUpdate()
+    {
+        ItemDTO item = new("Test", true, null);
+        await ItemsClient.UpdateItem(1, item);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
     }
