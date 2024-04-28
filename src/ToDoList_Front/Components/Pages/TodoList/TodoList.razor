@@ -18,6 +18,7 @@
         <ListItem _item="@item" OnItemDelete="HandleItemDelete" OnItemUpdate="HandleItemUpdate" />
     }
 }
+<button @onclick="TestAddItem">Add Test Item</button>
 
 @code {
     private Item[]? _items;
@@ -38,6 +39,14 @@
     {
         ItemDTO itemDto = new ItemDTO(item.text, item.is_completed, DateTime.Now);
         await ItemsClient.UpdateItem(item.id, itemDto);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+    
+    private async Task TestAddItem()
+    {
+        ItemDTO item = new ItemDTO("Test item", false, DateTime.Now);
+        await ItemsClient.CreateItem(item);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
     }
