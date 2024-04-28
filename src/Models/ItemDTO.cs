@@ -1,5 +1,5 @@
 ﻿namespace Models;
 
-public record ItemDTO(string Text, bool IsCompleted, DateTime? CompletedDate)
+public record ItemDTO(string text, bool is_completed, DateTime? completed_date)
 {
 }

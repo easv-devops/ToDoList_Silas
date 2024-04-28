@@ -36,7 +36,7 @@ public class ItemsService
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
         connection.Execute("UPDATE Items SET text = @Text, is_completed = @IsCompleted, completed_date = @CompletedDate " +
-                           "WHERE id = @id", new { id, item.Text, item.IsCompleted, item.CompletedDate }, transaction);
+                           "WHERE id = @id", new { id, item.text, item.is_completed, item.completed_date }, transaction);
         transaction.Commit();
     }
     
