@@ -34,8 +34,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aerom/RiderProjects/ToDoList/src/ToDoList_Front/Components/Pages/List.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0LnJhem9y
+[C:/Users/aerom/RiderProjects/ToDoList/src/ToDoList_Front/Components/Pages/TodoList/TodoList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUb2RvTGlzdFxUb2RvTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/aerom/RiderProjects/ToDoList/src/ToDoList_Front/Components/Routes.razor]

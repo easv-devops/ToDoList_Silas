@@ -1,0 +1,56 @@
+﻿<div>
+    <span>
+        <input type="checkbox" @bind="_item.is_completed" @onchange="() => InvertIsCompleted()" />
+        <input type="text" @value="_item.text" @oninput="OnTextChanged" />
+        <button @onclick="() => OnDelete(_item)">Delete</button>
+    </span>
+</div>
+
+@code {
+    [Parameter]
+    public Item _item { get; set; }
+
+    [Parameter]
+    private EventCallback<Item> OnItemDelete { get; set; }
+
+    private async Task OnDelete(Item item)
+    {
+        await OnItemDelete.InvokeAsync(item);
+    }
+
+    [Parameter]
+    private EventCallback<Item> OnItemUpdate { get; set; }
+
+    private async Task OnUpdate(Item item)
+    {
+        await OnItemUpdate.InvokeAsync(item);
+    }
+
+    private void InvertIsCompleted()
+    {
+        _item.is_completed = !_item.is_completed;
+        OnItemUpdate.InvokeAsync(_item);
+    }
+    
+    private Timer? _debounceTimer;
+
+    private void OnTextChanged(ChangeEventArgs e)
+    {
+        _item.text = e.Value?.ToString() ?? string.Empty;
+
+        _debounceTimer?.Dispose();
+        _debounceTimer = new Timer(OnTimerElapsed, null, TimeSpan.FromMilliseconds(1000), Timeout.InfiniteTimeSpan);
+    }
+
+    private void OnTimerElapsed(object? state)
+    {
+        try
+        {
+            OnUpdate(_item).Wait();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+    }
+}

@@ -1,0 +1,44 @@
+﻿@page "/todolist"
+@using ToDoList_Front.Clients
+@rendermode InteractiveServer
+@inject ItemsClient ItemsClient
+
+<PageTitle>To-Do List</PageTitle>
+
+@if (_items is null)
+{
+    <p>Loading...</p>
+} else if (_items.Length == 0)
+{
+    <p>No items found.</p>
+} else
+{
+    @foreach (var item in _items)
+    {
+        <ListItem _item="@item" OnItemDelete="HandleItemDelete" OnItemUpdate="HandleItemUpdate" />
+    }
+}
+
+@code {
+    private Item[]? _items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _items = await ItemsClient.GetItems();
+    }
+    
+    private async Task HandleItemDelete(Item item)
+    {
+        await ItemsClient.DeleteItem(item.id);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+    
+    private async Task HandleItemUpdate(Item item)
+    {
+        ItemDTO itemDto = new ItemDTO(item.text, item.is_completed, DateTime.Now);
+        await ItemsClient.UpdateItem(item.id, itemDto);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+}
