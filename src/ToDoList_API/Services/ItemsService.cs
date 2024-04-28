@@ -39,4 +39,12 @@ public class ItemsService
                            "WHERE id = @id", new { id, item.Text, item.IsCompleted, item.CreatedDate, item.CompletedDate }, transaction);
         transaction.Commit();
     }
+    
+    public void DeleteItem(int id)
+    {
+        using var connection = DatabaseConnection.GetConnection();
+        using var transaction = connection.BeginTransaction();
+        connection.Execute("DELETE FROM Items WHERE id = @id", new { id }, transaction);
+        transaction.Commit();
+    }
 }

@@ -55,4 +55,18 @@ public class ItemsController : ControllerBase
             return NotFound(e.Message);
         }
     }
+    
+    [HttpDelete("{id}")]
+    public IActionResult DeleteItem(int id)
+    {
+        try
+        {
+            _itemsService.DeleteItem(id);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
+    }
 }

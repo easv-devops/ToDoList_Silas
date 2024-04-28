@@ -1,10 +1,54 @@
 ﻿@page "/list"
+@using ToDoList_Front.Clients
 @rendermode InteractiveServer
 
 <PageTitle>To-Do List</PageTitle>
 
-<h1>To-Do List</h1>
+@if (_items is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Text</th>
+        <th>Is Completed</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in _items)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Text</td>
+        <td>@item.IsCompleted</td>
+    </tr>
+    }
+    </tbody>
+</table>
+}
+
+<button @onclick="TestAdd">Add</button>
 
 @code {
+    private readonly ItemsClient _client = new();
+    private Item[]? _items;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        
+        _items = await _client.GetItems();
+    }
 
+    private async void TestAdd()
+    {
+        ItemDTO item = new("Test", false, DateTime.Now, DateTime.Now);
+        await _client.CreateItem(item);
+        _items = await _client.GetItems();
+        StateHasChanged();
+    }
 }
