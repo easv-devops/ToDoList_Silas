@@ -1,5 +1,5 @@
 services:
-  converter-api:
+  todolist-api:
     image: kerosilas/todolist-api:staging
     ports:
       - "5002:8080"
@@ -8,7 +8,7 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     
-  converter-frontend:
+  todolist-frontend:
     image: kerosilas/todolist-web:staging
     ports:
       - "5001:8080"
