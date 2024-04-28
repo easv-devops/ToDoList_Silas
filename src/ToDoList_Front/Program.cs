@@ -1,3 +1,4 @@
+using ToDoList_Front.Clients;
 using ToDoList_Front.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+var apiUrl = builder.Configuration["TodoListApiUrl"] ?? 
+             throw new Exception("TodoListApiUrl is required");
+
+builder.Services.AddHttpClient<ItemsClient>(client =>
+{
+    client.BaseAddress = new Uri(apiUrl);
+});
 
 var app = builder.Build();
 

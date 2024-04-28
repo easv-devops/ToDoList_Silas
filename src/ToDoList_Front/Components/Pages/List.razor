@@ -1,6 +1,7 @@
 ﻿@page "/todolist"
 @using ToDoList_Front.Clients
 @rendermode InteractiveServer
+@inject ItemsClient ItemsClient
 
 <PageTitle>To-Do List</PageTitle>
 
@@ -34,21 +35,18 @@ else
 <button @onclick="TestAdd">Add</button>
 
 @code {
-    private readonly ItemsClient _client = new();
     private Item[]? _items;
     
     protected override async Task OnInitializedAsync()
     {
-        await base.OnInitializedAsync();
-        
-        _items = await _client.GetItems();
+        _items = await ItemsClient.GetItems();
     }
 
     private async void TestAdd()
     {
-        ItemDTO item = new("Test", false);
-        await _client.CreateItem(item);
-        _items = await _client.GetItems();
+        ItemDTO item = new("Test", false, null);
+        await ItemsClient.CreateItem(item);
+        _items = await ItemsClient.GetItems();
         StateHasChanged();
     }
 }

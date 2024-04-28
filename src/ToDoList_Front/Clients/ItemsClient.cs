@@ -6,59 +6,23 @@ public class ItemsClient
 {
     private readonly HttpClient _httpClient;
     
-    public ItemsClient()
+    public ItemsClient(HttpClient httpClient)
     {
-        _httpClient = new HttpClient
-        {
-            BaseAddress = new Uri("http://todolist-api:8080/")
-        };
+        _httpClient = httpClient;
     }
     
-    public async Task<Item[]> GetItems()
-    {
-        var items = await _httpClient.GetFromJsonAsync<Item[]>("Items");
-        return items ?? Array.Empty<Item>();
-    }
+    public async Task<Item[]> GetItems() 
+        => await _httpClient.GetFromJsonAsync<Item[]>("Items") ?? [];
     
     public async Task<Item> GetItem(int id)
-    {
-        var item = await _httpClient.GetFromJsonAsync<Item>($"Items/{id}");
-        
-        if (item == null)
-        {
-            throw new Exception("Item not found");
-        }
-        
-        return item;
-    }
+        => await _httpClient.GetFromJsonAsync<Item>($"Items/{id}") ?? throw new Exception("Item not found");
     
     public async Task CreateItem(ItemDTO item)
-    {
-        var response = await _httpClient.PostAsJsonAsync("Items", item);
-        
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception("Failed to create item");
-        }
-    }
+        => await _httpClient.PostAsJsonAsync("Items", item);
     
     public async Task UpdateItem(int id, ItemDTO item)
-    {
-        var response = await _httpClient.PutAsJsonAsync($"Items/{id}", item);
-        
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception("Failed to update item");
-        }
-    }
+        => await _httpClient.PutAsJsonAsync($"Items/{id}", item);
     
     public async Task DeleteItem(int id)
-    {
-        var response = await _httpClient.DeleteAsync($"Items/{id}");
-        
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception("Failed to delete item");
-        }
-    }
+        => await _httpClient.DeleteAsync($"Items/{id}");
 }
