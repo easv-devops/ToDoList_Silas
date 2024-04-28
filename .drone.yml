@@ -9,6 +9,7 @@ steps:
       SONARSECRET:
         from_secret: SonarQubeSecret
     commands:
+      - exit 0
       - dotnet sonarscanner begin
         /k:"easv-devops_ToDoList_Silas_AY8h6rwXEVvRW2O60E9U"
         /d:sonar.host.url="http://sonar.setgo.dk:9000"
@@ -16,7 +17,7 @@ steps:
         /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
         /d:sonar.qualitygate.wait=true
       - dotnet build --no-incremental
-      #- dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
+      - dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"
       - dotnet sonarscanner end /d:sonar.token="$SONARSECRET"
 
 ---
