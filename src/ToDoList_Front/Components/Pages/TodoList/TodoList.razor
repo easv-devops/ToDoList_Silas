@@ -17,7 +17,7 @@
     {
         <span>
             <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
-            <input type="text" @oninput="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" value="@item.text" />
+            <input type="text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" value="@item.text" />
             <button @onclick="() => HandleItemDelete(item)">Delete</button>
         </span>
     }
