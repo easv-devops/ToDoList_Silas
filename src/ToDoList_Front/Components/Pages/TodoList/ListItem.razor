@@ -1,6 +1,6 @@
 ﻿<div>
     <span>
-        <input type="checkbox" @bind="_item.is_completed" @onchange="() => InvertIsCompleted()" />
+        <input type="checkbox" @bind-value="_item.is_completed" @bind-value:event="oninput" @oninput="InvertIsCompletedAndInvokeUpdate" />
         <input type="text" @value="_item.text" @oninput="OnTextChanged" />
         <button @onclick="() => OnDelete(_item)">Delete</button>
     </span>
@@ -11,7 +11,7 @@
     public Item _item { get; set; }
 
     [Parameter]
-    private EventCallback<Item> OnItemDelete { get; set; }
+    public EventCallback<Item> OnItemDelete { get; set; }
 
     private async Task OnDelete(Item item)
     {
@@ -19,17 +19,20 @@
     }
 
     [Parameter]
-    private EventCallback<Item> OnItemUpdate { get; set; }
+    public EventCallback<Item> OnItemUpdate { get; set; }
 
     private async Task OnUpdate(Item item)
     {
         await OnItemUpdate.InvokeAsync(item);
     }
 
-    private void InvertIsCompleted()
+    private void InvertIsCompletedAndInvokeUpdate(ChangeEventArgs e)
     {
-        _item.is_completed = !_item.is_completed;
-        OnItemUpdate.InvokeAsync(_item);
+        if (e.Value is bool value)
+        {
+            _item.is_completed = !value;
+            OnItemUpdate.InvokeAsync(_item);
+        }
     }
     
     private Timer? _debounceTimer;
