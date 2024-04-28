@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7pHXFk/YxzTrYj1ApS351xK79n5nuH1rn/KFmRHfLek=",
+  "Hash": "vp2qsPBtdilPGFgff5yQKb+Uns9zxpn5xSoWAanSeyI=",
   "Source": "ToDoList_Front",
   "BasePath": "_content/ToDoList_Front",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ToDoList_Front\\wwwroot",
       "Source": "ToDoList_Front",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
       "BasePath": "_content/ToDoList_Front",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ToDoList_Front.styles.css",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ToDoList_Front.styles.css",
       "SourceId": "ToDoList_Front",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "ToDoList_Front.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ToDoList_Front.styles.css"
+      "OriginalItemSpec": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ToDoList_Front.styles.css"
     },
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ToDoList_Front.bundle.scp.css",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ToDoList_Front.bundle.scp.css",
       "SourceId": "ToDoList_Front",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "ToDoList_Front.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ToDoList_Front.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ToDoList_Front.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\app.css",
       "SourceId": "ToDoList_Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "ToDoList_Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "ToDoList_Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\favicon.png",
       "SourceId": "ToDoList_Front",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\ToDoList_Front\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
       "BasePath": "_content/ToDoList_Front",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

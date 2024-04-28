@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using ToDoList_API.Services;
-using Microsoft.AspNetCore.OpenApi;
 
 namespace ToDoList_API.Controllers;
 
