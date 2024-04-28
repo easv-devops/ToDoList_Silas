@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Models;
+using ToDoList_API.Services;
+using Microsoft.AspNetCore.OpenApi;
 
 namespace ToDoList_API.Controllers;
 
@@ -6,17 +9,50 @@ namespace ToDoList_API.Controllers;
 [Route("[controller]")]
 public class ItemsController : ControllerBase
 {
+    private readonly ItemsService _itemsService;
 
-    private readonly ILogger<ItemsController> _logger;
-
-    public ItemsController(ILogger<ItemsController> logger)
+    public ItemsController(ItemsService itemsService)
     {
-        _logger = logger;
+        _itemsService = itemsService;
     }
 
-    [HttpGet(Name = "GetItems")]
-    public IActionResult Get()
+    [HttpGet]
+    public IActionResult GetItems()
     {
+        return Ok(_itemsService.GetItems());
+    }
+    
+    [HttpGet("{id}")]
+    public IActionResult GetItem(int id)
+    {
+        try
+        {
+            return Ok(_itemsService.GetItem(id));
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
+    }
+    
+    [HttpPost]
+    public IActionResult CreateItem(ItemDTO item)
+    {
+        _itemsService.CreateItem(item);
         return Ok();
+    }
+    
+    [HttpPut("{id}")]
+    public IActionResult UpdateItem(int id, ItemDTO item)
+    {
+        try
+        {
+            _itemsService.UpdateItem(id, item);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
     }
 }

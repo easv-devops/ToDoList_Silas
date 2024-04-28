@@ -1,10 +1,5 @@
 ﻿namespace Models;
 
-public class Item
+public record Item(int Id, string Text, bool IsCompleted, DateTime CreatedDate, DateTime CompletedDate)
 {
-    public Guid Id { get; set; }
-
-    public string? Name { get; set; }
-
-    public bool IsComplete { get; set; }
 }
