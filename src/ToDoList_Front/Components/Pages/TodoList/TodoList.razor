@@ -15,7 +15,11 @@
 {
     @foreach (var item in _items)
     {
-        <ListItem _item="@item" OnItemDelete="HandleItemDelete" OnItemUpdate="HandleItemUpdate" />
+        <span>
+            <input type="checkbox" value="item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
+            <input type="text" bind="item.text" />
+            <button @onclick="() => HandleItemDelete(item)">Delete</button>
+        </span>
     }
 }
 <button @onclick="TestAddItem">Add Test Item</button>
@@ -38,6 +42,14 @@
     private async Task HandleItemUpdate(Item item)
     {
         ItemDTO itemDto = new ItemDTO(item.text, item.is_completed, DateTime.Now);
+        await ItemsClient.UpdateItem(item.id, itemDto);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+    
+    private async Task HandleItemInvert(bool isCompleted, Item item)
+    {
+        ItemDTO itemDto = new ItemDTO(item.text, isCompleted, isCompleted ? DateTime.Now : null);
         await ItemsClient.UpdateItem(item.id, itemDto);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
