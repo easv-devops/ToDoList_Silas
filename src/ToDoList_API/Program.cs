@@ -3,6 +3,8 @@ using ToDoList_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAuthorization();
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<ItemsService>();
