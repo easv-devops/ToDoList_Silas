@@ -16,7 +16,7 @@
     @foreach (var item in _items)
     {
         <span>
-            <input type="checkbox" value="item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
+            <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
             <input type="text" bind="item.text" />
             <button @onclick="() => HandleItemDelete(item)">Delete</button>
         </span>
