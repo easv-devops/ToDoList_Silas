@@ -68,8 +68,8 @@ steps:
     commands:
       - flyway migrate
         -url=jdbc:mariadb://167.86.105.61:3306/todolist
-        -user=myuser
-        -password=mypassword
+        -user=root
+        -password=rootpassword
         -locations=filesystem:./db/sql
     depends_on:
       - trigger update
