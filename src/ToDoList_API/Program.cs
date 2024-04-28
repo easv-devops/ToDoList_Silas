@@ -3,10 +3,11 @@ using ToDoList_API.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddSingleton<ItemsService>();
+builder.Services.AddScoped<ItemsService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers();
 
 builder.Services.AddAuthorization();
 
