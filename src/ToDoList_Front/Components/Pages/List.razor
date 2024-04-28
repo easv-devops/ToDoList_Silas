@@ -18,6 +18,7 @@ else
         <th>Text</th>
         <th>Is Completed</th>
         <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -28,6 +29,7 @@ else
         <td>@item.text</td>
         <td>@item.is_completed</td>
         <td><button @onclick="() => TestUpdate(item)">Update</button></td>
+        <td><button @onclick="() => TestDelete(item)">Delete</button></td>
     </tr>
     }
     </tbody>
@@ -57,6 +59,13 @@ else
         bool isCompleted = !item.is_completed;
         ItemDTO itemDto = new("Test", isCompleted, isCompleted ? DateTime.Now : null);
         await ItemsClient.UpdateItem(item.id, itemDto);
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
+    }
+    
+    private async void TestDelete(Item item)
+    {
+        await ItemsClient.DeleteItem(item.id);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
     }
