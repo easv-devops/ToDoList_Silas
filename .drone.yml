@@ -67,10 +67,6 @@ steps:
   - name: update database
     image: flyway/flyway
     commands:
-      - flyway repair
-        -url=jdbc:mariadb://167.86.105.61:3306/todolist
-        -user=myuser
-        -password=mypassword
       - flyway migrate
         -url=jdbc:mariadb://167.86.105.61:3306/todolist
         -user=myuser

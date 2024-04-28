@@ -26,7 +26,8 @@ public class ItemsService
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
-        connection.Execute("INSERT INTO Items (text, is_completed, created_date, completed_date) VALUES (@Text, @IsCompleted, @CreatedDate, @CompletedDate)", item);
+        connection.Execute("INSERT INTO Items (text, is_completed, created_date, completed_date) " +
+                           "VALUES (@Text, @IsCompleted, @CreatedDate, @CompletedDate)", item, transaction);
         transaction.Commit();
     }
     
@@ -34,7 +35,8 @@ public class ItemsService
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
-        connection.Execute("UPDATE Items SET text = @Text, is_completed = @IsCompleted, created_date = @CreatedDate, completed_date = @CompletedDate WHERE id = @id", new { id, item.Text, item.IsCompleted, item.CreatedDate, item.CompletedDate });
+        connection.Execute("UPDATE Items SET text = @Text, is_completed = @IsCompleted, created_date = @CreatedDate, completed_date = @CompletedDate " +
+                           "WHERE id = @id", new { id, item.Text, item.IsCompleted, item.CreatedDate, item.CompletedDate }, transaction);
         transaction.Commit();
     }
 }
