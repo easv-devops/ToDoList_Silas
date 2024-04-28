@@ -46,7 +46,7 @@ else
 
     private async void TestAdd()
     {
-        ItemDTO item = new("Test", false, DateTime.Now, DateTime.Now);
+        ItemDTO item = new("Test", false);
         await _client.CreateItem(item);
         _items = await _client.GetItems();
         StateHasChanged();
