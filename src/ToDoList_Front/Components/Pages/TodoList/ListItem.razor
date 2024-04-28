@@ -1,6 +1,6 @@
 ﻿<div>
     <span>
-        <input type="checkbox" @bind-value="_item.is_completed" @bind-value:event="oninput" @oninput="InvertIsCompletedAndInvokeUpdate" />
+        <input type="checkbox" @bind="_item.is_completed" @bind:event="oninput" @oninput="OnUpdateCheckbox" />
         <input type="text" @value="_item.text" @oninput="OnTextChanged" />
         <button @onclick="() => OnDelete(_item)">Delete</button>
     </span>
@@ -25,14 +25,15 @@
     {
         await OnItemUpdate.InvokeAsync(item);
     }
-
-    private void InvertIsCompletedAndInvokeUpdate(ChangeEventArgs e)
+    
+    private async void OnUpdateCheckbox(ChangeEventArgs e)
     {
-        if (e.Value is bool value)
+        if (e.Value is null)
         {
-            _item.is_completed = !value;
-            OnItemUpdate.InvokeAsync(_item);
+            return;
         }
+        _item.is_completed = (bool)e.Value;
+        await OnUpdate(_item);
     }
     
     private Timer? _debounceTimer;
