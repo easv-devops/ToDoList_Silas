@@ -22,7 +22,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: conversions
+      MYSQL_DATABASE: todolist
       MYSQL_USER: myuser
       MYSQL_PASSWORD: mypassword
     ports:
