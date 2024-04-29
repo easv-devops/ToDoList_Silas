@@ -26,7 +26,7 @@
         {
             if (!_showOnlyIncomplete || !item.is_completed)
             {
-                <ListItem Item="@item" />
+                <ListItem Item="@item" OnItemChanged="HandleItemChanged" />
             }
         }
     }
@@ -53,6 +53,12 @@
     private void ToggleFilter()
     {
         _showOnlyIncomplete = !_showOnlyIncomplete;
+    }
+    
+    private async Task HandleItemChanged()
+    {
+        _items = await ItemsClient.GetItems();
+        StateHasChanged();
     }
     
     private async Task TestAddItem()
