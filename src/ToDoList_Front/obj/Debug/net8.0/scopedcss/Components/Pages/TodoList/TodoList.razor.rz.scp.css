@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,52 +23,4 @@
 
 .list button:hover[b-y6sufzfpjw] {
     background-color: #4b4b4b;
-}
-
-.item[b-y6sufzfpjw] {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.item input[type="checkbox"][b-y6sufzfpjw] {
-    margin-right: 10px;
-    margin-left: 5px;
-    transform: scale(1.5);
-}
-
-.item input[type="text"][b-y6sufzfpjw] {
-    flex-grow: 1;
-    margin-right: 10px;
-    border: none;
-    font-size: 16px;
-}
-
-.item button[b-y6sufzfpjw] {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.item button:hover[b-y6sufzfpjw] {
-    background-color: #fa665c;
-}
-
-.item p[b-y6sufzfpjw] {
-    margin-right: 10px;
-    flex-grow: 1;
-    font-size: 16px;
 }

@@ -1,0 +1,47 @@
+.item[b-teagcfldk1] {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item input[type="checkbox"][b-teagcfldk1] {
+    margin-right: 10px;
+    margin-left: 5px;
+    transform: scale(1.5);
+}
+
+.item input[type="text"][b-teagcfldk1] {
+    flex-grow: 1;
+    margin-right: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.item button[b-teagcfldk1] {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.item button:hover[b-teagcfldk1] {
+    background-color: #fa665c;
+}
+
+.item p[b-teagcfldk1] {
+    margin-right: 10px;
+    flex-grow: 1;
+    font-size: 16px;
+}
