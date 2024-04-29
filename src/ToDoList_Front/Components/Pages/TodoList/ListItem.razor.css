@@ -12,13 +12,13 @@
 
 .item.editing {
     border-color: red;
-    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.55);
+    box-shadow: 0 2px 7px rgba(255, 0, 0, 0.45);
     transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
 .item.saved {
     border-color: #00ff00;
-    box-shadow: 0 2px 8px rgba(0, 255, 0, 0.55);
+    box-shadow: 0 2px 7px rgba(0, 255, 0, 0.45);
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 

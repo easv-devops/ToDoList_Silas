@@ -8,7 +8,13 @@
 <div class="list">
     <CreateItem OnItemAdded="HandleItemAddedOrChanged" />
     <br/>
-    
+    @if (_showOnlyIncomplete)
+    {
+    <button @onclick="ToggleFilter">Show all tasks</button>
+    } else
+    {
+    <button @onclick="ToggleFilter">Hide completed tasks</button>
+    }
     @if (_items is null)
     {
         <p>Loading...</p>
@@ -24,14 +30,6 @@
                 <ListItem Item="@item" OnItemChanged="HandleItemAddedOrChanged" />
             }
         }
-    }
-    <button @onclick="TestAddItem">Add Test Item</button>
-    @if (_showOnlyIncomplete)
-    {
-    <button @onclick="ToggleFilter">Show all tasks</button>
-    } else
-    {
-    <button @onclick="ToggleFilter">Hide completed tasks</button>
     }
 </div>
 
@@ -59,14 +57,6 @@
     
     private async Task HandleItemAddedOrChanged()
     {
-        _items = await ItemsClient.GetItems();
-        StateHasChanged();
-    }
-    
-    private async Task TestAddItem()
-    {
-        ItemDTO item = new ItemDTO("Test item", false, DateTime.Now);
-        await ItemsClient.CreateItem(item);
         _items = await ItemsClient.GetItems();
         StateHasChanged();
     }
