@@ -13,13 +13,13 @@
 .item.editing {
     border-color: red;
     box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
-    transition: border-color 250ms ease-out, box-shadow 250ms ease-out;
+    transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
 }
 
 .item.saved {
     border-color: #00ff00;
     box-shadow: 0 2px 8px rgba(0, 255, 0, 0.2);
-    transition: border-color 250ms ease-out, box-shadow 250ms ease-out;
+    transition: border-color 0ms ease-out, box-shadow 0ms ease-out;
 }
 
 .item input[type="checkbox"] {
@@ -36,17 +36,21 @@
 }
 
 .item button {
+    display: none;
     background-color: #f44336;
     color: white;
     border: none;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.item:hover button {
+    display: inline-block;
 }
 
 .item button:hover {
