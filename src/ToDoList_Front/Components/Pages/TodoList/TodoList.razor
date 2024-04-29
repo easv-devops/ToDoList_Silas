@@ -5,29 +5,37 @@
 
 <PageTitle>To-Do List</PageTitle>
 
-<button @onclick="ToggleFilter">Show only incomplete items</button>
-
-@if (_items is null)
-{
-    <p>Loading...</p>
-} else if (_items.Length == 0)
-{
-    <p>No items found.</p>
-} else
-{
-    @foreach (var item in _items)
+<div class="list">
+    @if (_showOnlyIncomplete)
     {
-        if (!_showOnlyIncomplete || !item.is_completed)
+        <button @onclick="ToggleFilter">Show all tasks</button>
+    } else
+    {
+        <button @onclick="ToggleFilter">Hide completed tasks</button>
+    }
+    
+    @if (_items is null)
+    {
+        <p>Loading...</p>
+    } else if (_items.Length == 0)
+    {
+        <p>No items found.</p>
+    } else
+    {
+        @foreach (var item in _items)
         {
-            <div class="item">
-                <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
-                <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
-                <button @onclick="() => HandleItemDelete(item)">Delete</button>
-            </div>
+            if (!_showOnlyIncomplete || !item.is_completed)
+            {
+                <div class="item">
+                    <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
+                    <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
+                    <button @onclick="() => HandleItemDelete(item)">Delete</button>
+                </div>
+            }
         }
     }
-}
-<button @onclick="TestAddItem">Add Test Item</button>
+    <button @onclick="TestAddItem">Add Test Item</button>
+</div>
 
 @code {
     private Item[]? _items;
