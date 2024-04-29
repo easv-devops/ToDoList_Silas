@@ -8,7 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var apiUrl = builder.Configuration["TodoListApiUrl"] ?? 
-             throw new ArgumentNullException();
+             throw new ArgumentNullException("TodoListApiUrl is required");
 
 builder.Services.AddHttpClient<ItemsClient>(client =>
 {
