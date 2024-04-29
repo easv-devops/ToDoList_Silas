@@ -28,14 +28,14 @@ public class ItemsController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult CreateItem(ItemDTO item)
+    public IActionResult CreateItem(ItemDto item)
     {
         _itemsService.CreateItem(item);
         return Ok();
     }
     
     [HttpPut("{id}")]
-    public IActionResult UpdateItem(int id, ItemDTO item)
+    public IActionResult UpdateItem(int id, ItemDto item)
     {
         _itemsService.UpdateItem(id, item);
         return Ok();

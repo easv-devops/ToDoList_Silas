@@ -39,7 +39,7 @@
     private async Task HandleItemUpdate(string newText, Item item)
     {
         _state = "saved";
-        ItemDTO itemDto = new ItemDTO(newText, item.is_completed, item.completed_date);
+        ItemDto itemDto = new ItemDto(newText, item.is_completed, item.completed_date);
         await ItemsClient.UpdateItem(item.id, itemDto);
         await OnItemChanged.InvokeAsync();
         await Task.Delay(1000);
@@ -48,7 +48,7 @@
 
     private async Task HandleItemInvert(bool isCompleted, Item item)
     {
-        ItemDTO itemDto = new ItemDTO(item.text, isCompleted, isCompleted ? DateTime.Now : null);
+        ItemDto itemDto = new ItemDto(item.text, isCompleted, isCompleted ? DateTime.Now : null);
         await ItemsClient.UpdateItem(item.id, itemDto);
         await OnItemChanged.InvokeAsync();
     }

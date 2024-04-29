@@ -17,12 +17,12 @@ public class ItemsService
         var item = connection.QueryFirstOrDefault<Item>("SELECT * FROM Items WHERE id = @id", new { id });
         if (item == null)
         {
-            throw new Exception("Item not found");
+            throw new ArgumentNullException();
         }
         return item;
     }
     
-    public void CreateItem(ItemDTO item)
+    public void CreateItem(ItemDto item)
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
@@ -31,7 +31,7 @@ public class ItemsService
         transaction.Commit();
     }
     
-    public void UpdateItem(int id, ItemDTO item)
+    public void UpdateItem(int id, ItemDto item)
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
