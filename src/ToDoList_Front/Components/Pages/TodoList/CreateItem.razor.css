@@ -20,6 +20,10 @@
     transition: border 0.15s ease-in-out;
 }
 
+.item input[type="text"]:focus {
+    border: 1px solid #b9b9b9;
+}
+
 .item:hover input[type="text"] {
     border: 1px solid #b9b9b9;
 }
