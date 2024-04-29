@@ -13,6 +13,7 @@
 
 .item input[type="checkbox"] {
     margin-right: 10px;
+    margin-left: 5px;
     transform: scale(1.5);
 }
 
