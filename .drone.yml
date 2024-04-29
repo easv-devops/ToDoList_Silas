@@ -9,7 +9,6 @@ steps:
       SONARSECRET:
         from_secret: SonarQubeSecret
     commands:
-      - exit 0
       - dotnet sonarscanner begin
         /k:"easv-devops_ToDoList_Silas_AY8h6rwXEVvRW2O60E9U"
         /d:sonar.host.url="http://sonar.setgo.dk:9000"
