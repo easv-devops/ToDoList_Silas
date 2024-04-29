@@ -5,6 +5,8 @@
 
 <PageTitle>To-Do List</PageTitle>
 
+<button @onclick="ToggleFilter">Show only incomplete items</button>
+
 @if (_items is null)
 {
     <p>Loading...</p>
@@ -15,21 +17,30 @@
 {
     @foreach (var item in _items)
     {
-        <div class="item @(item.is_completed ? "completed" : "incomplete")">
-            <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
-            <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
-            <button @onclick="() => HandleItemDelete(item)">Delete</button>
-        </div>
+        if (!_showOnlyIncomplete || !item.is_completed)
+        {
+            <div class="item">
+                <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
+                <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
+                <button @onclick="() => HandleItemDelete(item)">Delete</button>
+            </div>
+        }
     }
 }
 <button @onclick="TestAddItem">Add Test Item</button>
 
 @code {
     private Item[]? _items;
+    private bool _showOnlyIncomplete;
 
     protected override async Task OnInitializedAsync()
     {
         _items = await ItemsClient.GetItems();
+    }
+
+    private void ToggleFilter()
+    {
+        _showOnlyIncomplete = !_showOnlyIncomplete;
     }
     
     private async Task HandleItemDelete(Item item)
