@@ -6,13 +6,8 @@
 <PageTitle>To-Do List</PageTitle>
 
 <div class="list">
-    @if (_showOnlyIncomplete)
-    {
-        <button @onclick="ToggleFilter">Show all tasks</button>
-    } else
-    {
-        <button @onclick="ToggleFilter">Hide completed tasks</button>
-    }
+    <CreateItem OnItemAdded="HandleItemAddedOrChanged" />
+    <br/>
     
     @if (_items is null)
     {
@@ -26,11 +21,18 @@
         {
             if (!_showOnlyIncomplete || !item.is_completed)
             {
-                <ListItem Item="@item" OnItemChanged="HandleItemChanged" />
+                <ListItem Item="@item" OnItemChanged="HandleItemAddedOrChanged" />
             }
         }
     }
     <button @onclick="TestAddItem">Add Test Item</button>
+    @if (_showOnlyIncomplete)
+    {
+    <button @onclick="ToggleFilter">Show all tasks</button>
+    } else
+    {
+    <button @onclick="ToggleFilter">Hide completed tasks</button>
+    }
 </div>
 
 @code {
@@ -55,7 +57,7 @@
         _showOnlyIncomplete = !_showOnlyIncomplete;
     }
     
-    private async Task HandleItemChanged()
+    private async Task HandleItemAddedOrChanged()
     {
         _items = await ItemsClient.GetItems();
         StateHasChanged();

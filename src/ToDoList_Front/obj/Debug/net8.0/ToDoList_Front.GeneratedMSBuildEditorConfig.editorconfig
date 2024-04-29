@@ -50,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope = b-1xjj62kv44
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-tggd4cpv95
 
+[C:/Users/aerom/RiderProjects/ToDoList/src/ToDoList_Front/Components/Pages/TodoList/CreateItem.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUb2RvTGlzdFxDcmVhdGVJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0in6nxdb12
+
 [C:/Users/aerom/RiderProjects/ToDoList/src/ToDoList_Front/Components/Pages/TodoList/ListItem.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUb2RvTGlzdFxMaXN0SXRlbS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-teagcfldk1

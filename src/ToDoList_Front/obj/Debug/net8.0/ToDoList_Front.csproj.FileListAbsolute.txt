@@ -64,3 +64,4 @@ C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ToDoLi
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ref\ToDoList_Front.dll
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\TodoList.razor.rz.scp.css
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\ListItem.razor.rz.scp.css
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\CreateItem.razor.rz.scp.css
