@@ -15,11 +15,11 @@
 {
     @foreach (var item in _items)
     {
-        <span>
+        <div class="item">
             <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
-            <input type="text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" value="@item.text" />
+            <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
             <button @onclick="() => HandleItemDelete(item)">Delete</button>
-        </span>
+        </div>
     }
 }
 <button @onclick="TestAddItem">Add Test Item</button>
