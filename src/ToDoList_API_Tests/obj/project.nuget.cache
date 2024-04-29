@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8IgyF0ZwbPB1JBYdsCt4eJVCBWp72kpB27Kl9vj31vRqLaZ2IKcc70v2XFefraER+Df42QvDYLl1RO8phj5NGA==",
+  "dgSpecHash": "eLexfwNzviLJkzdBH6yXxerUBLa9trQ1cfgDLDvxXl78UfaZkPeudddxRIuzuAMn5soJTTizvujXSBgOi3NSMw==",
   "success": true,
   "projectFilePath": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_API_Tests\\ToDoList_API_Tests.csproj",
   "expectedPackageFiles": [
@@ -30,13 +30,6 @@
     "C:\\Users\\aerom\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\aerom\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\aerom\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit\\2.8.0\\xunit.2.8.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.analyzers\\1.13.0\\xunit.analyzers.1.13.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.assert\\2.8.0\\xunit.assert.2.8.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.core\\2.8.0\\xunit.core.2.8.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.extensibility.core\\2.8.0\\xunit.extensibility.core.2.8.0.nupkg.sha512",
-    "C:\\Users\\aerom\\.nuget\\packages\\xunit.extensibility.execution\\2.8.0\\xunit.extensibility.execution.2.8.0.nupkg.sha512",
     "C:\\Users\\aerom\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.1\\microsoft.netcore.app.ref.8.0.1.nupkg.sha512",
     "C:\\Users\\aerom\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.1\\microsoft.windowsdesktop.app.ref.8.0.1.nupkg.sha512",
     "C:\\Users\\aerom\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.1\\microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512"
