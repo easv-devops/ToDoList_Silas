@@ -2,16 +2,33 @@
 @inject ItemsClient ItemsClient
 
 
-    <div class="item">
-        <input type="checkbox" checked="@Item.is_completed" @onchange="() => HandleItemInvert(!Item.is_completed, Item)" />
-        <input type="text" value="@Item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, Item))" />
-        <button @onclick="() => HandleItemDelete(Item)">Delete</button>
+    <div class="item @_state">
+        <input type="checkbox" 
+               checked="@Item.is_completed" 
+               @onchange="() => HandleItemInvert(!Item.is_completed, Item)" 
+        />
+        
+        <input type="text" 
+               value="@Item.text" 
+               @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, Item))"
+               @oninput="StartEditing"
+        />
+        
+        <button @onclick="() => HandleItemDelete(Item)">
+            Delete
+        </button>
     </div>
 
 
 @code {
     [Parameter] public Item Item { get; set; } = new();
     [Parameter] public EventCallback OnItemChanged { get; set; }
+    private string _state = "";
+    
+    private void StartEditing()
+    {
+        _state = "editing";
+    }
 
     private async Task HandleItemDelete(Item item)
     {
@@ -21,9 +38,12 @@
 
     private async Task HandleItemUpdate(string newText, Item item)
     {
+        _state = "saved";
         ItemDTO itemDto = new ItemDTO(newText, item.is_completed, item.completed_date);
         await ItemsClient.UpdateItem(item.id, itemDto);
         await OnItemChanged.InvokeAsync();
+        await Task.Delay(1000);
+        _state = "";
     }
 
     private async Task HandleItemInvert(bool isCompleted, Item item)
@@ -32,5 +52,4 @@
         await ItemsClient.UpdateItem(item.id, itemDto);
         await OnItemChanged.InvokeAsync();
     }
-
 }
