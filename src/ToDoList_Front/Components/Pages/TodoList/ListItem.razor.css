@@ -22,6 +22,14 @@
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
+.item.deleted {
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, margin 0.5s ease-out, padding 0.5s ease-out;
+}
+
 .item input[type="checkbox"] {
     margin-right: 10px;
     margin-left: 3px;

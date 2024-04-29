@@ -32,8 +32,10 @@
 
     private async Task HandleItemDelete(Item item)
     {
+        _state = "deleted";
         await ItemsClient.DeleteItem(item.id);
         await OnItemChanged.InvokeAsync();
+        await Task.Delay(500);
     }
 
     private async Task HandleItemUpdate(string newText, Item item)
