@@ -15,7 +15,7 @@ public class ItemsClient
         => await _httpClient.GetFromJsonAsync<Item[]>("Items") ?? [];
     
     public async Task<Item> GetItem(int id)
-        => await _httpClient.GetFromJsonAsync<Item>($"Items/{id}") ?? throw new ArgumentNullException("Item not found");
+        => await _httpClient.GetFromJsonAsync<Item>($"Items/{id}") ?? throw new ArgumentNullException();
     
     public async Task CreateItem(ItemDto item)
         => await _httpClient.PostAsJsonAsync("Items", item);

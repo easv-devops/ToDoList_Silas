@@ -17,7 +17,7 @@ public class ItemsService
         var item = connection.QueryFirstOrDefault<Item>("SELECT * FROM Items WHERE id = @id", new { id });
         if (item == null)
         {
-            throw new ArgumentNullException("Item not found");
+            throw new ArgumentNullException();
         }
         return item;
     }
