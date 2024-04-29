@@ -37,3 +37,13 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.item button:hover {
+    background-color: #fa665c;
+}
+
+.item p {
+    margin-right: 10px;
+    flex-grow: 1;
+    font-size: 16px;
+}

@@ -19,6 +19,12 @@
             <input type="checkbox" checked="@item.is_completed" @onchange="() => HandleItemInvert(!item.is_completed, item)" />
             <input type="text" value="@item.text" @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, item))" />
             <button @onclick="() => HandleItemDelete(item)">Delete</button>
+            <p>@item.created_date</p>
+            @if (item.is_completed)
+            {
+                <p>@item.completed_date</p>
+            }
+            <p>@item.id</p>
         </div>
     }
 }
