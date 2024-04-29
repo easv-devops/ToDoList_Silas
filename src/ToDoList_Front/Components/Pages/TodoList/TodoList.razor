@@ -44,6 +44,14 @@
     protected override async Task OnInitializedAsync()
     {
         _items = await ItemsClient.GetItems();
+        // _items = new Item[]
+        // {
+        //     new (1, "Test item 1", false, DateTime.Now, DateTime.Today),
+        //     new (2, "Test item 2", true, DateTime.Now, DateTime.Today),
+        //     new (3, "Test item 3", false, DateTime.Now, DateTime.Today),
+        //     new (4, "Test item 4", true, DateTime.Now, DateTime.Today),
+        //     new (5, "Test item 5", false, DateTime.Now, DateTime.Today),
+        // };
     }
 
     private void ToggleFilter()

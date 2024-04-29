@@ -62,3 +62,4 @@ C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\refint
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ToDoList_Front.pdb
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ToDoList_Front.genruntimeconfig.cache
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ref\ToDoList_Front.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\TodoList.razor.rz.scp.css
