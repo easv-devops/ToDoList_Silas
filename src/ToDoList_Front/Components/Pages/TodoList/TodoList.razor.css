@@ -6,15 +6,21 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     border-radius: 5px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .item input[type="checkbox"] {
     margin-right: 10px;
+    transform: scale(1.5);
 }
 
 .item input[type="text"] {
     flex-grow: 1;
     margin-right: 10px;
+    border: none;
+    font-size: 16px;
 }
 
 .item button {
