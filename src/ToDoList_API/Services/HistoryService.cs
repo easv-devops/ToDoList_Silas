@@ -27,7 +27,7 @@ public class HistoryService
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
         connection.Execute("INSERT INTO History (text, item_id) VALUES (@Text, @ItemId)",
-            new { Text = history.text, IsCompleted = history.item_id }, transaction);
+            new { Text = history.text, ItemId = history.item_id }, transaction);
         transaction.Commit();
     }
     
