@@ -28,10 +28,10 @@ public class ItemsController : ControllerBase
     }
     
     [HttpPost]
-    public ActionResult<int> CreateItem(ItemDto item)
+    public ActionResult CreateItem(ItemDto item)
     {
-        var createdItemId = _itemsService.CreateItem(item);
-        return Ok(createdItemId);
+        _itemsService.CreateItem(item);
+        return Ok();
     }
     
     [HttpPut("{id}")]

@@ -17,12 +17,8 @@ public class ItemsClient
     public async Task<Item> GetItem(int id)
         => await _httpClient.GetFromJsonAsync<Item>($"Items/{id}") ?? throw new ArgumentNullException();
     
-    public async Task<int> CreateItem(ItemDto item)
-    {
-        var response = await _httpClient.PostAsJsonAsync("Items", item);
-        response.EnsureSuccessStatusCode();
-        return await response.Content.ReadFromJsonAsync<int>();
-    }
+    public async Task CreateItem(ItemDto item)
+        => await _httpClient.PostAsJsonAsync("Items", item);
     
     public async Task UpdateItem(int id, ItemDto item)
         => await _httpClient.PutAsJsonAsync($"Items/{id}", item);

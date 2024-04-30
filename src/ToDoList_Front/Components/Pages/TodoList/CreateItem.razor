@@ -17,9 +17,9 @@
         if (!string.IsNullOrWhiteSpace(ItemText))
         {
             ItemDto newItem = new ItemDto(ItemText, false, null);
-            int createdItemId = await ItemsClient.CreateItem(newItem);
+            await ItemsClient.CreateItem(newItem);
             await OnItemAdded.InvokeAsync();
-            await HistoryClient.CreateHistory(new HistoryDto(createdItemId, $"Item {createdItemId} created"));
+            await HistoryClient.CreateHistory(new HistoryDto(ItemText, $"Task \"{ItemText}\" has been created."));
             ItemText = string.Empty;
         }
     }

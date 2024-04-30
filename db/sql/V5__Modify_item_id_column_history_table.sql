@@ -1,0 +1,5 @@
+ALTER TABLE History
+DROP FOREIGN KEY History_ibfk_1;
+
+ALTER TABLE History
+    CHANGE COLUMN item_id item_text VARCHAR(255) NOT NULL;

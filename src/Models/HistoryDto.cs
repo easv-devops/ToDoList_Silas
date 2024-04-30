@@ -1,5 +1,5 @@
 ﻿namespace Models;
 
-public record HistoryDto(int item_id, string? text)
+public record HistoryDto(string? item_text, string? text)
 {
 }
