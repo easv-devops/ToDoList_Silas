@@ -26,8 +26,9 @@ public class ItemsService
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
-        int id = connection.QuerySingle<int>("INSERT INTO Items (text, is_completed, completed_date) VALUES (@Text, @IsCompleted, @CompletedDate)",
+        connection.Execute("INSERT INTO Items (text, is_completed, completed_date) VALUES (@Text, @IsCompleted, @CompletedDate)",
             new { Text = item.text, IsCompleted = item.is_completed, CompletedDate = item.completed_date }, transaction);
+        int id = connection.QuerySingle<int>("SELECT LAST_INSERT_ID()");
         transaction.Commit();
         return id;
     }

@@ -34,5 +34,6 @@
     protected override async Task OnInitializedAsync()
     {
         _histories = await HistoryClient.GetHistories();
+        _histories = _histories.OrderByDescending(x => x.created_date).ToArray();
     }
 }
