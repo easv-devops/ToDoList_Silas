@@ -16,19 +16,19 @@
     transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
-.item.saved {
+.task.saved {
     border-color: #00ff00;
     box-shadow: 0 2px 7px rgba(0, 255, 0, 0.45);
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
-.item input[type="checkbox"] {
+.task .task-checkbox {
     margin-right: 10px;
     margin-left: 3px;
     transform: scale(1.5);
 }
 
-.item input[type="text"] {
+.item .task-text {
     flex-grow: 1;
     margin-right: 10px;
     border: 1px solid #ffffff;
@@ -38,15 +38,15 @@
     transition: border 0.15s ease-in-out;
 }
 
-.item input[type="text"]:focus {
+.task .task-text:focus {
     border: 1px solid #b9b9b9;
 }
 
-.item:hover input[type="text"] {
+.task:hover .task-text {
     border: 1px solid #b9b9b9;
 }
 
-.item button {
+.task .task-button {
     display: inline-block;
     background-color: #f44336;
     color: white;
@@ -63,16 +63,10 @@
     transition: opacity 0.15s ease-in-out;
 }
 
-.item:hover button {
+.task:hover .task-button {
     opacity: 1;
 }
 
-.item button:hover {
+.task .task-button:hover {
     background-color: #fa665c;
-}
-
-.item p {
-    margin-right: 10px;
-    flex-grow: 1;
-    font-size: 16px;
 }

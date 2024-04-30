@@ -2,9 +2,9 @@
 @inject ItemsClient ItemsClient
 @inject HistoryClient HistoryClient
 
-<div class="item">
-    <input @bind="ItemText" type="text" placeholder="Enter a task..." />
-    <button @onclick="Create">Add task</button>
+<div class="add-task">
+    <input class="add-task-input" @bind="ItemText" type="text" placeholder="Enter a task..." />
+    <button class="add-task-button" @onclick="Create">Add</button>
 </div>
 
 @code {

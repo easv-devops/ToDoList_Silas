@@ -2,23 +2,25 @@
 @inject ItemsClient ItemsClient
 @inject HistoryClient HistoryClient
 
-
-    <div class="item @_state">
-        <input type="checkbox" 
-               checked="@Item.is_completed" 
-               @onchange="() => HandleItemInvert(!Item.is_completed, Item)" 
-        />
+<div class="task @_state">
+    <input class="task-checkbox"
+           type="checkbox" 
+           checked="@Item.is_completed" 
+           @onchange="() => HandleItemInvert(!Item.is_completed, Item)" 
+    />
         
-        <input type="text" 
-               value="@Item.text" 
-               @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, Item))"
-               @oninput="StartEditing"
-        />
+    <input class="task-text"
+           type="text" 
+           value="@Item.text" 
+           @onchange="@(e => HandleItemUpdate(e.Value?.ToString() ?? string.Empty, Item))"
+           @oninput="StartEditing"
+    />
         
-        <button @onclick="() => HandleItemDelete(Item)">
-            Delete
-        </button>
-    </div>
+    <button class="task-button"
+            @onclick="() => HandleItemDelete(Item)">
+        Delete
+    </button>
+</div>
 
 
 @code {
@@ -35,6 +37,7 @@
     {
         await ItemsClient.DeleteItem(item.id);
         await OnItemChanged.InvokeAsync();
+        await HistoryClient.CreateHistory(new HistoryDto(item.text, $"\"{item.text}\" was deleted."));
     }
 
     private async Task HandleItemUpdate(string newText, Item item)

@@ -5,15 +5,21 @@
 
 <PageTitle>To-Do List</PageTitle>
 
-<div class="list">
+<div class="todo-list">
     <CreateItem OnItemAdded="HandleItemAddedOrChanged" />
     <br/>
     @if (_showOnlyIncomplete)
     {
-    <button @onclick="ToggleFilter">Show all tasks</button>
+        <button class="filter-button"
+                @onclick="ToggleFilter">
+            Show all tasks
+        </button>
     } else
     {
-    <button @onclick="ToggleFilter">Hide completed tasks</button>
+        <button class="filter-button"
+                @onclick="ToggleFilter">
+            Hide completed tasks
+        </button>
     }
     @if (_items is null)
     {
