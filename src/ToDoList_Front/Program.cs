@@ -15,6 +15,11 @@ builder.Services.AddHttpClient<ItemsClient>(client =>
     client.BaseAddress = new Uri(apiUrl);
 });
 
+builder.Services.AddHttpClient<HistoryClient>(client =>
+{
+    client.BaseAddress = new Uri(apiUrl);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

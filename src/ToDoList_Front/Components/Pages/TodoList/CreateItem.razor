@@ -1,5 +1,6 @@
 ﻿@using ToDoList_Front.Clients
 @inject ItemsClient ItemsClient
+@inject HistoryClient HistoryClient
 
 <div class="item">
     <input @bind="ItemText" type="text" placeholder="Enter a task..." />
@@ -16,8 +17,9 @@
         if (!string.IsNullOrWhiteSpace(ItemText))
         {
             ItemDto newItem = new ItemDto(ItemText, false, null);
-            await ItemsClient.CreateItem(newItem);
+            int createdItemId = await ItemsClient.CreateItem(newItem);
             await OnItemAdded.InvokeAsync();
+            await HistoryClient.CreateHistory(new HistoryDto(createdItemId, $"Item {createdItemId} created"));
             ItemText = string.Empty;
         }
     }

@@ -1,0 +1,38 @@
+﻿@page "/history"
+@using ToDoList_Front.Clients
+@rendermode InteractiveServer
+@inject HistoryClient HistoryClient
+
+<PageTitle>History</PageTitle>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date & Time</th>
+            <th>Task ID</th>
+            <th>Log</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (_histories != null)
+        {
+            @foreach (var history in _histories)
+            {
+                <tr>
+                    <td>@history.created_date</td>
+                    <td>@history.item_id</td>
+                    <td>@history.text</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private History[]? _histories;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _histories = await HistoryClient.GetHistories();
+    }
+}

@@ -22,13 +22,14 @@ public class ItemsService
         return item;
     }
     
-    public void CreateItem(ItemDto item)
+    public int CreateItem(ItemDto item)
     {
         using var connection = DatabaseConnection.GetConnection();
         using var transaction = connection.BeginTransaction();
-        connection.Execute("INSERT INTO Items (text, is_completed, completed_date) VALUES (@Text, @IsCompleted, @CompletedDate)",
+        int id = connection.QuerySingle<int>("INSERT INTO Items (text, is_completed, completed_date) VALUES (@Text, @IsCompleted, @CompletedDate)",
             new { Text = item.text, IsCompleted = item.is_completed, CompletedDate = item.completed_date }, transaction);
         transaction.Commit();
+        return id;
     }
     
     public void UpdateItem(int id, ItemDto item)

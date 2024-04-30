@@ -7,6 +7,7 @@ builder.Services.AddCors();
 
 // Add services to the container.
 builder.Services.AddScoped<ItemsService>();
+builder.Services.AddScoped<HistoryService>();
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
