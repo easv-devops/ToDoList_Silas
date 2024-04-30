@@ -1,9 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `Mark Task`
-    .page `http://167.86.105.61:5001/todolist`
-    .pageLoadTimeout(5000)
-    .retryTestPages(true);
+    .page `http://167.86.105.61:5001/todolist`;
 
 test('Mark Task', async t => {
     const taskSelector = Selector(".task").withText("Test Task");
