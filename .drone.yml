@@ -79,9 +79,9 @@ steps:
   - name: end-to-end tests
     image: testcafe/testcafe
     commands:
-      - testcafe chromium:headless test/e2e/add-task.js --page-request-timeout 8000 --retry-test-pages --selector-timeout 500000
-      - testcafe chromium:headless test/e2e/mark-task.js --page-request-timeout 8000 --retry-test-pages --selector-timeout 500000
-      - testcafe chromium:headless test/e2e/delete-task.js --page-request-timeout 8000 --retry-test-pages --selector-timeout 500000
+      - testcafe chromium:headless test/e2e/add-task.js --page-request-timeout 8000 --selector-timeout 500000
+      - testcafe chromium:headless test/e2e/mark-task.js --page-request-timeout 8000 --selector-timeout 500000
+      - testcafe chromium:headless test/e2e/delete-task.js --page-request-timeout 8000 --selector-timeout 500000
     depends_on:
       - update database
 
