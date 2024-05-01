@@ -64,10 +64,6 @@ steps:
   - name: update database
     image: flyway/flyway
     commands:
-#      - flyway repair
-#        -url=jdbc:mariadb://167.86.105.61:3306/todolist
-#        -user=myuser
-#        -password=mypassword
       - flyway migrate
         -url=jdbc:mariadb://167.86.105.61:3306/todolist
         -user=myuser
@@ -86,61 +82,61 @@ steps:
 #  - name: performance tests
 #    image: grafana/k6
 #    commands:
-#      - k6 run test/performance/????.js
+#      - k6 run test/performance/stress.js
 #    depends_on:
 #      - update database
 
-#---
-#
-#kind: pipeline
-#type: docker
-#name: deploy
-#depends_on:
-#  - deliver
-#
-#steps:
-#  - name: release api
-#    image: plugins/docker
-#    settings:
-#      username:
-#        from_secret: DockerUsername
-#      password:
-#        from_secret: DockerPassword
-#      context: src
-#      dockerfile: src/ToDoList_API/Dockerfile
-#      repo: kerosilas/todolist-api
-#      tags:
-#        - prod
-#
-#  - name: release web
-#    image: plugins/docker
-#    settings:
-#      username:
-#        from_secret: DockerUsername
-#      password:
-#        from_secret: DockerPassword
-#      context: src
-#      dockerfile: src/ToDoList_Front/Dockerfile
-#      repo: kerosilas/todolist-web
-#      tags:
-#        - prod
-#
-#  - name: trigger update
-#    image: curlimages/curl
-#    commands:
-#      - "curl --fail -X GET 'http://167.86.105.64:8080/v1/update' -H 'Authorization: Bearer mytoken'" # Must match the token defined in docker-compose.yml
-#      - sleep 10
-#    depends_on:
-#      - release api
-#      - release web
-#
-#  - name: update database
-#    image: flyway/flyway
-#    commands:
-#      - flyway migrate
-#        -url=jdbc:mariadb://167.86.105.64:3306/todolist
-#        -user=myuser
-#        -password=mypassword
-#        -locations=filesystem:./db/sql
-#    depends_on:
-#      - trigger update
+---
+
+kind: pipeline
+type: docker
+name: deploy
+depends_on:
+  - deliver
+
+steps:
+  - name: release api
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DockerUsername
+      password:
+        from_secret: DockerPassword
+      context: src
+      dockerfile: src/ToDoList_API/Dockerfile
+      repo: kerosilas/todolist-api
+      tags:
+        - prod
+
+  - name: release web
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DockerUsername
+      password:
+        from_secret: DockerPassword
+      context: src
+      dockerfile: src/ToDoList_Front/Dockerfile
+      repo: kerosilas/todolist-web
+      tags:
+        - prod
+
+  - name: trigger update
+    image: curlimages/curl
+    commands:
+      - "curl --fail -X GET 'http://167.86.105.64:8080/v1/update' -H 'Authorization: Bearer mytoken'" # Must match the token defined in docker-compose.yml
+      - sleep 10
+    depends_on:
+      - release api
+      - release web
+
+  - name: update database
+    image: flyway/flyway
+    commands:
+      - flyway migrate
+        -url=jdbc:mariadb://167.86.105.64:3306/todolist
+        -user=myuser
+        -password=mypassword
+        -locations=filesystem:./db/sql
+    depends_on:
+      - trigger update
