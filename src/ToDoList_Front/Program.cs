@@ -24,9 +24,8 @@ builder.Services.AddHttpClient<HistoryClient>(client =>
 var featureHubUrl = builder.Configuration["FeatureHubUrl"];
 var featureHubApiKey = builder.Configuration["FeatureHubApiKey"];
 var featureHubConfig = new EdgeFeatureHubConfig(featureHubUrl, featureHubApiKey);
-var context = await featureHubConfig.NewContext().Build();
 
-builder.Services.AddSingleton<IClientContext>(context);
+builder.Services.AddSingleton<EdgeFeatureHubConfig>(featureHubConfig);
 
 builder.Services.AddAuthorization();
 

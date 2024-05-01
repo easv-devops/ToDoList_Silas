@@ -1,5 +1,5 @@
 ﻿@using FeatureHubSDK
-@inject IClientContext FeatureClient
+@inject EdgeFeatureHubConfig EdgeFeatureHubConfig
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -31,8 +31,9 @@
 @code {
     bool _historyEnabled = false;
     
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        _historyEnabled = FeatureClient["history"].IsEnabled;
+        var fh = await EdgeFeatureHubConfig.NewContext().Build();
+        _historyEnabled = fh["history"].IsEnabled;
     }
 }
