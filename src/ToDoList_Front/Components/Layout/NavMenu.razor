@@ -16,23 +16,14 @@
                 <span class="ms-3 bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span>To-Do List
             </NavLink>
         </div>
-        
-        @if (_historyEnabled)
-        {
-            <div class="nav-item px-3">
+        <div class="nav-item px-3">
                 <NavLink class="nav-link" href="history">
                     <span class="ms-3 bi bi-list-nested-nav-menu" aria-hidden="true"></span>History
                 </NavLink>
             </div>
-        }
     </nav>
 </div>
 
 @code {
-    // bool _historyEnabled = false;
-    //
-    // protected override void OnInitialized()
-    // {
-    //     _historyEnabled = FeatureClient["history"].IsEnabled;
-    // }
+
 }
