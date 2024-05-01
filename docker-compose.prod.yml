@@ -1,8 +1,8 @@
 services:
-  converter-frontend:
+  todolist-frontend:
     image: kerosilas/todolist-web:prod
 
-  converter-api:
+  todolist-api:
     image: kerosilas/todolist-api:prod
 
   featurehub:
