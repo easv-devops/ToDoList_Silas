@@ -25,8 +25,10 @@ var featureHubUrl = builder.Configuration["FeatureHubUrl"] ??
                     throw new ArgumentNullException();
 var featureHubApiKey = builder.Configuration["FeatureHubApiKey"] ?? 
                        throw new ArgumentNullException();
+var featureHubConfig = new EdgeFeatureHubConfig(featureHubUrl, featureHubApiKey);
+var fh = await featureHubConfig.NewContext().Build();
 
-builder.Services.AddSingleton<FeatureClient>(new FeatureClient(featureHubUrl, featureHubApiKey));
+builder.Services.AddSingleton<IClientContext>(fh);
 
 builder.Services.AddAuthorization();
 

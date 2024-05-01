@@ -1,6 +1,5 @@
 ﻿@using FeatureHubSDK
-@using ToDoList_Front.Clients
-@inject FeatureClient FeatureClient
+@inject IClientContext FeatureClient
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -32,8 +31,8 @@
 @code {
     bool _historyEnabled = false;
     
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        _historyEnabled = await FeatureClient.IsEnabled("history");
+        _historyEnabled = FeatureClient["history"].IsEnabled;
     }
 }
