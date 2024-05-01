@@ -51,10 +51,8 @@ steps:
       repo: kerosilas/todolist-web
       tags:
         - staging
-      environment:
-        - ENVIRONMENT=staging
       args:
-        - ENVIRONMENT=production
+        - TAG=staging
 
   - name: trigger update
     image: curlimages/curl
@@ -124,10 +122,8 @@ steps:
       repo: kerosilas/todolist-web
       tags:
         - prod
-      environment:
-        - ENVIRONMENT=production
       args:
-        - ENVIRONMENT=production
+        - TAG=production
 
   - name: trigger update
     image: curlimages/curl
