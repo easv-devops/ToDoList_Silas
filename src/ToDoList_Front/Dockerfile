@@ -1,5 +1,4 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-ENV ENVIRONMENT=production
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
@@ -7,7 +6,8 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
-ARG TAG=production
+ARG TAG
+ENV ENVIRONMENT=$TAG
 WORKDIR /src
 COPY ["ToDoList_Front/ToDoList_Front.csproj", "ToDoList_Front/"]
 RUN dotnet restore "ToDoList_Front/ToDoList_Front.csproj"
@@ -22,5 +22,4 @@ RUN dotnet publish "ToDoList_Front.csproj" -c $BUILD_CONFIGURATION -o /app/publi
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENV ENVIRONMENT=${TAG:-production}
 ENTRYPOINT ["dotnet", "ToDoList_Front.dll"]
