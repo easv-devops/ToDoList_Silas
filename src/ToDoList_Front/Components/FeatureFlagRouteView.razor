@@ -1,0 +1,24 @@
+﻿@inject EdgeFeatureHubConfig EdgeFeatureHubConfig
+@inject NavigationManager Navigation
+@using FeatureHubSDK
+@using ToDoList_Front.Components.Layout
+
+<RouteView RouteData="@RouteData" DefaultLayout="typeof(MainLayout)" />
+
+@code {
+    [Parameter]
+    public RouteData RouteData { get; set; }
+    bool _historyEnabled = false;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var fh = await EdgeFeatureHubConfig.NewContext().Build();
+        _historyEnabled = fh["history"].IsEnabled;
+        
+        if (RouteData.PageType.FullName == "ToDoList_Front.Components.Pages.History" && !_historyEnabled)
+        {
+            Navigation.NavigateTo("/notfound");
+        }
+    }
+    
+}
