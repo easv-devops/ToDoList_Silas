@@ -31,9 +31,13 @@
 @code {
     bool _historyEnabled = false;
     
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        var fh = await EdgeFeatureHubConfig.NewContext().Build();
-        _historyEnabled = fh["history"].IsEnabled;
+        Task.Run(async () =>
+        {
+            var fh = await EdgeFeatureHubConfig.NewContext().Build();
+            _historyEnabled = fh["history"].IsEnabled;
+            StateHasChanged();
+        });
     }
 }
