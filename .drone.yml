@@ -79,12 +79,12 @@ steps:
     depends_on:
       - update database
 
-#  - name: performance tests
-#    image: grafana/k6
-#    commands:
-#      - k6 run test/performance/stress.js
-#    depends_on:
-#      - update database
+  - name: performance tests
+    image: grafana/k6
+    commands:
+      - k6 run test/performance/stress.js
+    depends_on:
+      - update database
 
 ---
 

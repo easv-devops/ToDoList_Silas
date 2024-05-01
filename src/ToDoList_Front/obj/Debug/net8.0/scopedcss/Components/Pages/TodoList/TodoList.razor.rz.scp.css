@@ -1,4 +1,4 @@
-.list[b-y6sufzfpjw] {
+.todo-list[b-y6sufzfpjw] {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,9 +7,9 @@
     margin-right: auto;
 }
 
-.list button[b-y6sufzfpjw] {
+.todo-list .filter-button[b-y6sufzfpjw] {
     display: inline-block;
-    background-color: #232323;
+    background-color: #2a2a2a;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -20,8 +20,26 @@
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
+    width: 140px;
 }
 
-.list button:hover[b-y6sufzfpjw] {
-    background-color: #4f4f4f;
+.todo-list .filter-button.inactive[b-y6sufzfpjw] {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #1a1a1a;
+}
+
+.todo-list .filter-button.inactive:hover[b-y6sufzfpjw] {
+    background-color: #ececec;
+}
+
+.todo-list .filter-button:hover[b-y6sufzfpjw] {
+    background-color: #3d3d3d;
+}
+
+.filters[b-y6sufzfpjw] {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 7px 0 7px 0;
 }

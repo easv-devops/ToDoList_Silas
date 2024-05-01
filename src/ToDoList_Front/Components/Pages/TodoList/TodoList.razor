@@ -7,20 +7,6 @@
 
 <div class="todo-list">
     <CreateItem OnItemAdded="HandleItemAddedOrChanged" />
-    <br/>
-    @if (_showOnlyIncomplete)
-    {
-        <button class="filter-button"
-                @onclick="ToggleFilter">
-            Show all tasks
-        </button>
-    } else
-    {
-        <button class="filter-button"
-                @onclick="ToggleFilter">
-            Hide completed tasks
-        </button>
-    }
     @if (_items is null)
     {
         <p>Loading...</p>
@@ -29,6 +15,21 @@
         <p>There are currently no tasks.</p>
     } else
     {
+        <div class="filters">
+            @if (_showOnlyIncomplete)
+            {
+                <button class="filter-button inactive"
+                        @onclick="ToggleFilter">
+                    Show all
+                </button>
+            } else
+            {
+                <button class="filter-button"
+                        @onclick="ToggleFilter">
+                    Hide completed
+                </button>
+            }
+        </div>
         @foreach (var item in _items)
         {
             if (!_showOnlyIncomplete || !item.is_completed)

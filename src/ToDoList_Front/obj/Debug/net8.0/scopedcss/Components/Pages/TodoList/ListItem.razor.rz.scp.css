@@ -1,4 +1,4 @@
-.item[b-teagcfldk1] {
+.task[b-teagcfldk1] {
     display: flex;
     align-items: center;
     padding: 5px 10px;
@@ -10,25 +10,25 @@
     transition: border-color 1s ease-out, box-shadow 1s ease-out;
 }
 
-.item.editing[b-teagcfldk1] {
+.task.editing[b-teagcfldk1] {
     border-color: red;
     box-shadow: 0 2px 7px rgba(255, 0, 0, 0.45);
     transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
-.item.saved[b-teagcfldk1] {
+.task.saved[b-teagcfldk1] {
     border-color: #00ff00;
     box-shadow: 0 2px 7px rgba(0, 255, 0, 0.45);
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
-.item input[type="checkbox"][b-teagcfldk1] {
+.task .task-checkbox[b-teagcfldk1] {
     margin-right: 10px;
     margin-left: 3px;
     transform: scale(1.5);
 }
 
-.item input[type="text"][b-teagcfldk1] {
+.task .task-text[b-teagcfldk1] {
     flex-grow: 1;
     margin-right: 10px;
     border: 1px solid #ffffff;
@@ -38,15 +38,15 @@
     transition: border 0.15s ease-in-out;
 }
 
-.item input[type="text"]:focus[b-teagcfldk1] {
+.task .task-text:focus[b-teagcfldk1] {
     border: 1px solid #b9b9b9;
 }
 
-.item:hover input[type="text"][b-teagcfldk1] {
+.task:hover .task-text[b-teagcfldk1] {
     border: 1px solid #b9b9b9;
 }
 
-.item button[b-teagcfldk1] {
+.task .task-button[b-teagcfldk1] {
     display: inline-block;
     background-color: #f44336;
     color: white;
@@ -63,16 +63,10 @@
     transition: opacity 0.15s ease-in-out;
 }
 
-.item:hover button[b-teagcfldk1] {
+.task:hover .task-button[b-teagcfldk1] {
     opacity: 1;
 }
 
-.item button:hover[b-teagcfldk1] {
+.task .task-button:hover[b-teagcfldk1] {
     background-color: #fa665c;
-}
-
-.item p[b-teagcfldk1] {
-    margin-right: 10px;
-    flex-grow: 1;
-    font-size: 16px;
 }
