@@ -20,6 +20,8 @@ builder.Services.AddHttpClient<HistoryClient>(client =>
     client.BaseAddress = new Uri(apiUrl);
 });
 
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,7 +32,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
