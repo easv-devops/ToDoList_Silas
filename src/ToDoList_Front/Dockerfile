@@ -1,6 +1,4 @@
-﻿ARG TAG
-
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 ENV ENVIRONMENT=production
 USER $APP_UID
 WORKDIR /app
@@ -9,6 +7,7 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
+ARG TAG=production
 WORKDIR /src
 COPY ["ToDoList_Front/ToDoList_Front.csproj", "ToDoList_Front/"]
 RUN dotnet restore "ToDoList_Front/ToDoList_Front.csproj"
