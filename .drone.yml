@@ -53,6 +53,8 @@ steps:
         - staging
       environment:
         - ENVIRONMENT=staging
+      args:
+        - ENVIRONMENT=production
 
   - name: trigger update
     image: curlimages/curl
@@ -123,6 +125,8 @@ steps:
       tags:
         - prod
       environment:
+        - ENVIRONMENT=production
+      args:
         - ENVIRONMENT=production
 
   - name: trigger update
