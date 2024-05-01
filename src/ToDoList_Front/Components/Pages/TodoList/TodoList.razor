@@ -45,7 +45,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _items = await ItemsClient.GetItems();
+        var items = await ItemsClient.GetItems();
+        _items = items.OrderByDescending(item => item.created_date).ToArray();
     }
 
     private void ToggleFilter()
