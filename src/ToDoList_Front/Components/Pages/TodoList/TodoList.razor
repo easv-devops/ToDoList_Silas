@@ -56,7 +56,8 @@
     
     private async Task HandleItemAddedOrChanged()
     {
-        _items = await ItemsClient.GetItems();
+        var items = await ItemsClient.GetItems();
+        _items = items.OrderByDescending(item => item.created_date).ToArray();
         StateHasChanged();
     }
 }
