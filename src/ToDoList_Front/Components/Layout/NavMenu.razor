@@ -33,7 +33,14 @@
     
     protected override async Task OnInitializedAsync()
     {
-        var fh = await EdgeFeatureHubConfig.NewContext().Build();
-        _historyEnabled = fh["history"].IsEnabled;
+        var environment = Environment.GetEnvironmentVariable("ENVIRONMENT");
+        if (environment == "production")
+        {
+            var fh = await EdgeFeatureHubConfig.NewContext().Build();
+            _historyEnabled = fh["history"].IsEnabled;
+        } else
+        {
+            _historyEnabled = true;
+        }
     }
 }

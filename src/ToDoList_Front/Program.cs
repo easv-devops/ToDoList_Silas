@@ -21,16 +21,18 @@ builder.Services.AddHttpClient<HistoryClient>(client =>
     client.BaseAddress = new Uri(apiUrl);
 });
 
-var featureHubUrl = builder.Configuration["FeatureHubUrl"];
-var featureHubApiKey = builder.Configuration["FeatureHubApiKey"];
-var featureHubConfig = new EdgeFeatureHubConfig(featureHubUrl, featureHubApiKey);
-
-builder.Services.AddSingleton<EdgeFeatureHubConfig>(featureHubConfig);
+var environment = Environment.GetEnvironmentVariable("ENVIRONMENT");
+if (environment == "production")
+{
+    var featureHubUrl = builder.Configuration["FeatureHubUrl"];
+    var featureHubApiKey = builder.Configuration["FeatureHubApiKey"];
+    var featureHubConfig = new EdgeFeatureHubConfig(featureHubUrl, featureHubApiKey);
+    builder.Services.AddSingleton<EdgeFeatureHubConfig>(featureHubConfig);
+}
 
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
