@@ -1,6 +1,5 @@
 using ToDoList_Front.Clients;
 using ToDoList_Front.Components;
-using FeatureHubSDK;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,14 +19,6 @@ builder.Services.AddHttpClient<HistoryClient>(client =>
 {
     client.BaseAddress = new Uri(apiUrl);
 });
-
-var featureHubUrl = builder.Configuration["FeatureHubUrl"] ?? 
-                    throw new ArgumentNullException();
-var featureHubApiKey = builder.Configuration["FeatureHubApiKey"] ?? 
-                       throw new ArgumentNullException();
-var featureHubConfig = new EdgeFeatureHubConfig(featureHubUrl, featureHubApiKey);
-
-builder.Services.AddSingleton<IClientContext>(await featureHubConfig.NewContext().Build());
 
 builder.Services.AddAuthorization();
 
