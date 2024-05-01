@@ -1,7 +1,10 @@
 ﻿@page "/history"
 @using ToDoList_Front.Clients
+@using FeatureHubSDK
 @rendermode InteractiveServer
+@inject EdgeFeatureHubConfig EdgeFeatureHubConfig
 @inject HistoryClient HistoryClient
+@inject NavigationManager NavigationManager
 
 <PageTitle>History</PageTitle>
 
@@ -35,5 +38,16 @@
     {
         _histories = await HistoryClient.GetHistories();
         _histories = _histories.OrderByDescending(x => x.created_date).ToArray();
+        
+        var environment = Environment.GetEnvironmentVariable("ENVIRONMENT");
+        if (environment == "production")
+        {
+            var fh = await EdgeFeatureHubConfig.NewContext().Build();
+            var historyEnabled = fh["history"].IsEnabled;
+            if (!historyEnabled)
+            {
+                NavigationManager.NavigateTo("/notfound");
+            }
+        }
     }
 }
