@@ -1,5 +1,6 @@
 ﻿@using FeatureHubSDK
-@inject EdgeFeatureHubConfig EdgeFeatureHubConfig
+@using ToDoList_Front.Clients
+@inject FeatureClient FeatureClient
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -31,13 +32,8 @@
 @code {
     bool _historyEnabled = false;
     
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Task.Run(async () =>
-        {
-            var fh = await EdgeFeatureHubConfig.NewContext().Build();
-            _historyEnabled = fh["history"].IsEnabled;
-            StateHasChanged();
-        });
+        _historyEnabled = await FeatureClient.IsEnabled("history");
     }
 }
