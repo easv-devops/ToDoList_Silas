@@ -1,4 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+ARG TAG
+ENV ENVIRONMENT=$TAG
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
@@ -17,9 +19,13 @@ RUN dotnet build "ToDoList_Front.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
+ARG TAG
+ENV ENVIRONMENT=$TAG
 RUN dotnet publish "ToDoList_Front.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ARG TAG
+ENV ENVIRONMENT=$TAG
 ENTRYPOINT ["dotnet", "ToDoList_Front.dll"]
