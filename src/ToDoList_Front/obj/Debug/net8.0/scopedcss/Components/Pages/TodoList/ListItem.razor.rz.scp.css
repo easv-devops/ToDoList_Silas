@@ -46,27 +46,34 @@
     border: 1px solid #b9b9b9;
 }
 
-.task .task-button[b-teagcfldk1] {
-    display: inline-block;
-    background-color: #f44336;
-    color: white;
+.task-button[b-teagcfldk1] {
+    background-color: #d00000;
+    color: #ffffff;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     margin: 4px 0 4px 0;
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
+    width: 33px;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
 }
 
-.task:hover .task-button[b-teagcfldk1] {
-    opacity: 1;
+.task-button:hover[b-teagcfldk1] {
+    background-color: #dc0000;
 }
 
-.task .task-button:hover[b-teagcfldk1] {
-    background-color: #fa665c;
+.task-button:active[b-teagcfldk1] {
+    background-color: #ff0000;
+}
+
+.task:hover .task-button[b-teagcfldk1] {
+    opacity: 1;
 }

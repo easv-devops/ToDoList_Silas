@@ -126,8 +126,6 @@ steps:
         - TAG=production
       build_args:
         - TAG=production
-      arg:
-        - TAG=production
 
   - name: trigger update
     image: curlimages/curl

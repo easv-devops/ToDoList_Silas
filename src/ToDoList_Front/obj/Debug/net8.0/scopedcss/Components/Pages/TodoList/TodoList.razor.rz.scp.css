@@ -7,39 +7,35 @@
     margin-right: auto;
 }
 
-.todo-list .filter-button[b-y6sufzfpjw] {
-    display: inline-block;
-    background-color: #2a2a2a;
-    color: white;
+.filter-button[b-y6sufzfpjw] {
+    background-color: #ffffff;
+    color: #707070;
     border: none;
     padding: 5px 10px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
     text-decoration: none;
-    font-size: 16px;
-    margin: 0 0 8px 0;
+    font-size: 14px;
+    margin: 0 0 5px 0;
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
-    width: 140px;
+    width: 200px;
 }
 
-.todo-list .filter-button.inactive[b-y6sufzfpjw] {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #1a1a1a;
+.filter-button:hover[b-y6sufzfpjw] {
+    background-color: #f6f6f6;
 }
 
-.todo-list .filter-button.inactive:hover[b-y6sufzfpjw] {
-    background-color: #ececec;
-}
-
-.todo-list .filter-button:hover[b-y6sufzfpjw] {
-    background-color: #3d3d3d;
+.filter-button:active[b-y6sufzfpjw] {
+    background-color: #f1f1f1;
 }
 
 .filters[b-y6sufzfpjw] {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 7px 0 7px 0;
+    margin: 5px 0 5px 0;
 }

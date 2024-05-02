@@ -65,3 +65,16 @@ C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\ref\To
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\TodoList.razor.rz.scp.css
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\ListItem.razor.rz.scp.css
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\TodoList\CreateItem.razor.rz.scp.css
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Common.Logging.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Common.Logging.Core.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\FeatureHubSDK.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\System.Net.IPNetwork.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\JsonSubTypes.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\LaunchDarkly.EventSource.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\MurmurHash.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\NodaTime.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Polly.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Polly.Extensions.Http.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\RestSharp.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\SemVer.dll
