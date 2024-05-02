@@ -52,20 +52,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // var items = await ItemsClient.GetItems();
-        // _items = items.OrderByDescending(item => item.created_date).ToArray();
-        _items = new Item[]
-        {
-            new Item { id = 1, text = "Buy milk", is_completed = false, completed_date = null },
-            new Item { id = 2, text = "Buy eggs", is_completed = true, completed_date = null },
-            new Item { id = 3, text = "Buy bread", is_completed = false, completed_date = null },
-            new Item { id = 4, text = "Buy milk", is_completed = false, completed_date = null },
-            new Item { id = 5, text = "Buy eggs", is_completed = true, completed_date = null },
-            new Item { id = 6, text = "Buy bread", is_completed = false, completed_date = null },
-            new Item { id = 7, text = "Buy milk", is_completed = false, completed_date = null },
-            new Item { id = 8, text = "Buy eggs", is_completed = true, completed_date = null },
-            new Item { id = 9, text = "Buy bread", is_completed = false, completed_date = null },   
-        };
+        var items = await ItemsClient.GetItems();
+        _items = items.OrderByDescending(item => item.created_date).ToArray();
     }
 
     private void ToggleFilter()
