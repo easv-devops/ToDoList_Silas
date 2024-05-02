@@ -25,7 +25,6 @@
     {
         if (!string.IsNullOrWhiteSpace(ItemText))
         {
-            ItemText = string.Empty;
             ItemDto newItem = new ItemDto(ItemText, false, null);
             await ItemsClient.CreateItem(newItem);
             await OnItemAdded.InvokeAsync();
