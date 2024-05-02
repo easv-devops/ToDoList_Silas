@@ -3,12 +3,11 @@
     background-color: #ffffff;
     align-items: center;
     padding: 5px 8px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
     width: 100%;
     border-radius: 5px;
-    transition: border-color 1s ease-out, box-shadow 1s ease-out;
 }
 
 .task.editing[b-teagcfldk1] {
@@ -23,9 +22,15 @@
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
+.task.completed .task-text[b-teagcfldk1] {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #919191;
+}
+
 .task-checkbox[b-teagcfldk1] {
     background-color: rgba(255, 255, 255, 0);
-    color: #606060;
+    color: rgb(75, 190, 136);
     border: none;
     padding: 3px 3px;
     display: flex;
@@ -39,7 +44,7 @@
     border-radius: 5px;
     height: 33px;
     width: 33px;
-    transition: opacity 0.15s ease-in-out;
+    
 }
 
 .task-checkbox:hover[b-teagcfldk1] {
@@ -52,17 +57,13 @@
 
 .task-text[b-teagcfldk1] {
     flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     font-size: 16px;
     height: 33px;
     line-height: 33px;
-    padding-left: 6px;
-    transition: border 0.15s ease-in-out;
-}
-
-.task-text:focus[b-teagcfldk1] {
-    border: 1px solid rgba(0, 0, 0, 0.15); !important
+    padding-left: 7px;
 }
 
 .task-text:hover[b-teagcfldk1] {
@@ -101,4 +102,15 @@
 
 .task:hover .task-button[b-teagcfldk1] {
     opacity: 1;
+}
+
+.visually-hidden[b-teagcfldk1] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

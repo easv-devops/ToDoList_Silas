@@ -1,9 +1,9 @@
-﻿@page "/todolist"
+﻿@page "/tasks"
 @using ToDoList_Front.Clients
 @rendermode InteractiveServer
 @inject ItemsClient ItemsClient
 
-<PageTitle>To-Do List</PageTitle>
+<PageTitle>Tasks</PageTitle>
 
 <div class="todo-list @(_loaded ? "fade-in" : "")">
     <CreateItem OnItemAdded="HandleItemAddedOrChanged" />

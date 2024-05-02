@@ -150,22 +150,13 @@ main[b-1xjj62kv44] {
         overflow-y: auto;
     }
 }
-/* _content/ToDoList_Front/Components/Pages/HistoryPage.razor.rz.scp.css */
-@keyframes fadeIn-b-z9ek4y0trj {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in[b-z9ek4y0trj] {
-    animation: fadeIn-b-z9ek4y0trj 0.1s ease-in-out 0.15s forwards;
-}
 /* _content/ToDoList_Front/Components/Pages/TodoList/CreateItem.razor.rz.scp.css */
 .add-task[b-0in6nxdb12] {
     display: flex;
     background-color: #ffffff;
     align-items: center;
     padding: 5px 8px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
     width: 100%;
@@ -180,12 +171,7 @@ main[b-1xjj62kv44] {
     font-size: 16px;
     height: 33px;
     line-height: 33px;
-    padding-left: 6px;
-    transition: border 0.15s ease-in-out;
-}
-
-.add-task-text:focus[b-0in6nxdb12] {
-    border: 1px solid rgba(0, 0, 0, 0.15); !important
+    padding-left: 7px;
 }
 
 .add-task-text:hover[b-0in6nxdb12] {
@@ -193,22 +179,29 @@ main[b-1xjj62kv44] {
 }
 
 .add-task-button[b-0in6nxdb12] {
-    display: inline-block;
-    background-color: #21b76d;
-    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    color: #757575;
     border: none;
-    padding: 5px 10px;
+    padding: 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     margin: 4px 0 4px 0;
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
+    width: 33px;
 }
 
 .add-task-button:hover[b-0in6nxdb12] {
-    background-color: #54ce81;
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.add-task-button:active[b-0in6nxdb12] {
+    background-color: rgba(0, 0, 0, 0.12);
 }
 /* _content/ToDoList_Front/Components/Pages/TodoList/ListItem.razor.rz.scp.css */
 .task[b-teagcfldk1] {
@@ -216,12 +209,11 @@ main[b-1xjj62kv44] {
     background-color: #ffffff;
     align-items: center;
     padding: 5px 8px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
     width: 100%;
     border-radius: 5px;
-    transition: border-color 1s ease-out, box-shadow 1s ease-out;
 }
 
 .task.editing[b-teagcfldk1] {
@@ -236,9 +228,15 @@ main[b-1xjj62kv44] {
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
+.task.completed .task-text[b-teagcfldk1] {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #919191;
+}
+
 .task-checkbox[b-teagcfldk1] {
     background-color: rgba(255, 255, 255, 0);
-    color: #606060;
+    color: rgb(75, 190, 136);
     border: none;
     padding: 3px 3px;
     display: flex;
@@ -252,7 +250,7 @@ main[b-1xjj62kv44] {
     border-radius: 5px;
     height: 33px;
     width: 33px;
-    transition: opacity 0.15s ease-in-out;
+    
 }
 
 .task-checkbox:hover[b-teagcfldk1] {
@@ -265,17 +263,13 @@ main[b-1xjj62kv44] {
 
 .task-text[b-teagcfldk1] {
     flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     font-size: 16px;
     height: 33px;
     line-height: 33px;
-    padding-left: 6px;
-    transition: border 0.15s ease-in-out;
-}
-
-.task-text:focus[b-teagcfldk1] {
-    border: 1px solid rgba(0, 0, 0, 0.15); !important
+    padding-left: 7px;
 }
 
 .task-text:hover[b-teagcfldk1] {
@@ -314,6 +308,17 @@ main[b-1xjj62kv44] {
 
 .task:hover .task-button[b-teagcfldk1] {
     opacity: 1;
+}
+
+.visually-hidden[b-teagcfldk1] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 /* _content/ToDoList_Front/Components/Pages/TodoList/TodoList.razor.rz.scp.css */
 .todo-list[b-y6sufzfpjw] {
