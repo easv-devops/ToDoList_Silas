@@ -4,7 +4,7 @@ let randomInt = getRandomInt();
 let textContent = "Test Task " + randomInt;
 
 fixture `To-Do List`
-    .page `http://167.86.105.61:5001/todolist`;
+    .page `http://167.86.105.61:5001/tasks`;
 
 test("Add Task", async t => {
     await t.wait(1000)
