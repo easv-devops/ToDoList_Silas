@@ -283,6 +283,7 @@ main[b-1xjj62kv44] {
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0;
 }
 
 .filter-button[b-y6sufzfpjw] {
@@ -300,7 +301,7 @@ main[b-1xjj62kv44] {
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
-    width: 200px;
+    width: 190px;
 }
 
 .filter-button:hover[b-y6sufzfpjw] {
@@ -316,4 +317,13 @@ main[b-1xjj62kv44] {
     flex-direction: row;
     width: 100%;
     margin: 5px 0 5px 0;
+}
+
+@keyframes fadeIn-b-y6sufzfpjw {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in[b-y6sufzfpjw] {
+    animation: fadeIn-b-y6sufzfpjw 0.1s ease-in-out 0.08s forwards;
 }

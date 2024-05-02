@@ -5,7 +5,7 @@
 
 <PageTitle>To-Do List</PageTitle>
 
-<div class="todo-list">
+<div class="todo-list @(_loaded ? "fade-in" : "")">
     <CreateItem OnItemAdded="HandleItemAddedOrChanged" />
     @if (_items is null)
     {
@@ -49,11 +49,13 @@
 @code {
     private Item[]? _items;
     private bool _showOnlyIncomplete;
+    private bool _loaded;
 
     protected override async Task OnInitializedAsync()
     {
         var items = await ItemsClient.GetItems();
         _items = items.OrderByDescending(item => item.created_date).ToArray();
+        _loaded = true;
     }
 
     private void ToggleFilter()
