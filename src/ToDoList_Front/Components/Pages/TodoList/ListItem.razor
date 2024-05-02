@@ -57,7 +57,6 @@
         _state = "saved";
         ItemDto itemDto = new ItemDto(newText, item.is_completed, item.completed_date);
         await ItemsClient.UpdateItem(item.id, itemDto);
-        await OnItemChanged.InvokeAsync();
         await HistoryClient.CreateHistory(new HistoryDto(item.text, $"\"{item.text}\" text was changed to \"{newText}\"."));
         await Task.Delay(1000);
         _state = "";
@@ -65,9 +64,10 @@
 
     private async Task HandleItemInvert(bool isCompleted, Item item)
     {
+        Item.is_completed = isCompleted;
+        StateHasChanged();
         ItemDto itemDto = new ItemDto(item.text, isCompleted, isCompleted ? DateTime.Now : null);
         await ItemsClient.UpdateItem(item.id, itemDto);
-        await OnItemChanged.InvokeAsync();
         await HistoryClient.CreateHistory(new HistoryDto(item.text, $"\"{item.text}\" was set as {(isCompleted ? "completed" : "not completed")}."));
     }
 }
