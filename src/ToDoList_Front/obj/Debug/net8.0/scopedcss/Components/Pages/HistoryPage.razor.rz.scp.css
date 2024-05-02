@@ -1,0 +1,8 @@
+@keyframes fadeIn-b-z9ek4y0trj {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in[b-z9ek4y0trj] {
+    animation: fadeIn-b-z9ek4y0trj 0.1s ease-in-out 0.15s forwards;
+}

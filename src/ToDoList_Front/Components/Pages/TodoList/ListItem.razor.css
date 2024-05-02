@@ -1,7 +1,8 @@
 ﻿.task {
     display: flex;
+    background-color: #ffffff;
     align-items: center;
-    padding: 5px 10px;
+    padding: 5px 8px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 8px;
@@ -11,46 +12,68 @@
 }
 
 .task.editing {
-    border-color: red;
-    box-shadow: 0 2px 7px rgba(255, 0, 0, 0.45);
+    border-color: #d20000;
+    box-shadow: 0 2px 7px rgba(255, 0, 0, 0.4);
     transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
 .task.saved {
-    border-color: #00ff00;
-    box-shadow: 0 2px 7px rgba(0, 255, 0, 0.45);
+    border-color: #00d200;
+    box-shadow: 0 2px 7px rgba(0, 255, 0, 0.4);
     transition: border-color 0s ease-out, box-shadow 0s ease-out;
 }
 
-.task .task-checkbox {
-    margin-right: 10px;
-    margin-left: 3px;
-    transform: scale(1.5);
+.task-checkbox {
+    background-color: rgba(255, 255, 255, 0);
+    color: #606060;
+    border: none;
+    padding: 3px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 0 4px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 33px;
+    width: 33px;
+    transition: opacity 0.15s ease-in-out;
 }
 
-.task .task-text {
+.task-checkbox:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.task-checkbox:active {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.task-text {
     flex-grow: 1;
-    margin-right: 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 5px;
     font-size: 16px;
     height: 33px;
+    line-height: 33px;
+    padding-left: 6px;
     transition: border 0.15s ease-in-out;
 }
 
-.task .task-text:focus {
-    border: 1px solid #b9b9b9;
+.task-text:focus {
+    border: 1px solid rgba(0, 0, 0, 0.15); !important
 }
 
-.task:hover .task-text {
-    border: 1px solid #b9b9b9;
+.task-text:hover {
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .task-button {
-    background-color: #d00000;
-    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+    color: #757575;
     border: none;
-    padding: 5px 5px;
+    padding: 4px 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,11 +90,13 @@
 }
 
 .task-button:hover {
-    background-color: #dc0000;
+    background-color: rgb(197, 0, 0);
+    color: white;
 }
 
 .task-button:active {
-    background-color: #ff0000;
+    background-color: rgb(231, 0, 0);
+    color: white;
 }
 
 .task:hover .task-button {

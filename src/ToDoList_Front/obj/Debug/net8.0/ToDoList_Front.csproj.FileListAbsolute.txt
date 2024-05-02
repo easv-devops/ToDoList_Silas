@@ -78,3 +78,4 @@ C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Polly.
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\Polly.Extensions.Http.dll
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\RestSharp.dll
 C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\bin\Debug\net8.0\SemVer.dll
+C:\Users\aerom\RiderProjects\ToDoList\src\ToDoList_Front\obj\Debug\net8.0\scopedcss\Components\Pages\HistoryPage.razor.rz.scp.css

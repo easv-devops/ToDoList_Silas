@@ -9,8 +9,8 @@
 }
 
 .filter-button {
-    background-color: #ffffff;
-    color: #707070;
+    background-color: rgba(255, 255, 255, 0);
+    color: #656565;
     border: none;
     padding: 5px 10px;
     display: flex;
@@ -23,15 +23,15 @@
     cursor: pointer;
     border-radius: 5px;
     height: 33px;
-    width: 190px;
+    width: 185px;
 }
 
 .filter-button:hover {
-    background-color: #f6f6f6;
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
 .filter-button:active {
-    background-color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 .filters {
