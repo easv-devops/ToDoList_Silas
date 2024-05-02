@@ -22,10 +22,6 @@
     transition: border 0.15s ease-in-out;
 }
 
-.add-task-text:focus {
-    border: 1px solid rgba(0, 0, 0, 0.15); !important
-}
-
 .add-task-text:hover {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }

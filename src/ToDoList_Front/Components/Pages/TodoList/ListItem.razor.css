@@ -61,10 +61,6 @@
     transition: border 0.15s ease-in-out;
 }
 
-.task-text:focus {
-    border: 1px solid rgba(0, 0, 0, 0.15); !important
-}
-
 .task-text:hover {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -101,4 +97,15 @@
 
 .task:hover .task-button {
     opacity: 1;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

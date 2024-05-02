@@ -8,7 +8,7 @@
 
 <PageTitle>History</PageTitle>
 
-<table class="table table-hover @(_loaded ? "fade-in" : "")">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Date & Time</th>
@@ -33,13 +33,11 @@
 
 @code {
     private History[]? _histories;
-    private bool _loaded;
 
     protected override async Task OnInitializedAsync()
     {
         _histories = await HistoryClient.GetHistories();
         _histories = _histories.OrderByDescending(x => x.created_date).ToArray();
-        _loaded = true;
         
         var environment = Environment.GetEnvironmentVariable("ENVIRONMENT");
         if (environment == "production")

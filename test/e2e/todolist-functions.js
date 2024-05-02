@@ -20,7 +20,8 @@ test("Mark Task", async t => {
     await t.click(Selector(".task").find(".task-checkbox"));
 
     await t.wait(1000)
-    await t.expect(Selector(".task").find(".task-checkbox").checked).ok();
+    const buttonText = await Selector(".task").find(".task-checkbox").innerText;
+    await t.expect(buttonText).eql("Checked");
 });
 
 test("Delete Task", async t => {
