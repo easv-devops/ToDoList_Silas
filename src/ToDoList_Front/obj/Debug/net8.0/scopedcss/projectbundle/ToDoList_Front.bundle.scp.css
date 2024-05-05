@@ -178,6 +178,12 @@ main[b-1xjj62kv44] {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.add-task-text:focus[b-0in6nxdb12] {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
 .add-task-button[b-0in6nxdb12] {
     background-color: rgba(255, 255, 255, 0);
     color: #757575;
@@ -214,6 +220,7 @@ main[b-1xjj62kv44] {
     margin-bottom: 8px;
     width: 100%;
     border-radius: 5px;
+    transition: border-color 1s ease-out, box-shadow 1s ease-out;
 }
 
 .task.editing[b-teagcfldk1] {
@@ -274,6 +281,12 @@ main[b-1xjj62kv44] {
 
 .task-text:hover[b-teagcfldk1] {
     border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.task-text:focus[b-teagcfldk1] {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .task-button[b-teagcfldk1] {
