@@ -1,0 +1,63 @@
+﻿.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 250px;
+    padding: 6px 10px 10px 10px;
+
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.box.openNow {
+    border-color: #00c0d2;
+    box-shadow: 0 2px 7px rgba(0, 225, 255, 0.4);
+}
+
+.box.soonOpen {
+    border-color: #d29700;
+    box-shadow: 0 2px 7px rgba(255, 174, 0, 0.4);
+}
+
+p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.timeToOpen {
+    height: 58px;
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-bottom: -8px;
+}
+
+p.openNow {
+    height: 58px;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: -8px;
+    color: #273436;
+}
+
+.currentTime {
+    font-size: 1.5em;
+    color: #757575;
+}
+
+.description {
+    margin-top: 12px;
+    font-size: 0.92em;
+    color: #ababab;
+}

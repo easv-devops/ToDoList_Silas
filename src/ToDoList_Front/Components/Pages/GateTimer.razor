@@ -1,0 +1,72 @@
+﻿@page "/gatetimer"
+@using System.Threading
+@rendermode InteractiveServer
+@inject IJSRuntime Js
+@implements IDisposable
+
+<PageTitle>GATE Timer</PageTitle>
+
+<div class="page">
+    <div class="box @_state">
+        @if (_state == "openNow")
+        {
+            <p class="openNow">OPEN NOW</p>
+        }
+        else
+        {
+            <p class="timeToOpen">@_timeToOpen</p>
+        }
+        <p class="currentTime">@_currentTime.ToString("HH:mm:ss")</p>
+    </div>
+    <p class="description">Timer for The Gold Saucer GATE in Final Fantasy XIV.</p>
+</div>
+
+@code {
+    private DateTime _currentTime;
+    private int _timeToOpen;
+    private Timer? _timer;
+    private string _state = "";
+
+    protected override void OnInitialized()
+    {
+        _timer = new Timer(UpdateClock, null, 0, 1000);
+        _currentTime = DateTime.Now;
+        _timeToOpen = 20 - _currentTime.Minute % 20;
+    }
+
+    private void UpdateClock(object? state)
+    {
+        InvokeAsync(async () =>
+        {
+            _currentTime = DateTime.Now;
+            _timeToOpen = 20 - _currentTime.Minute % 20;
+            
+            if (_timeToOpen == 20)
+            {
+                _state = "openNow";
+            }
+            else if (_timeToOpen == 1)
+            {
+                _state = "soonOpen";
+            }
+            else
+            {
+                _state = "";
+            }
+            
+            if (_state == "openNow" && _currentTime.Second == 0)
+                await Js.InvokeVoidAsync("playBigBeep");
+            else if (_state == "soonOpen" && _currentTime.Second == 0)
+                await Js.InvokeVoidAsync("playSmallBeep");
+
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+    }
+}
+
+

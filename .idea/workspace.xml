@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c222aa33-b9a3-4793-81ba-5a9d74dae1c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/Components/Pages/TodoList/CreateItem.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/Components/Pages/TodoList/CreateItem.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/Components/Pages/TodoList/ListItem.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/Components/Pages/TodoList/ListItem.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/bin/Debug/net8.0/ToDoList_Front.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ToDoList_Front.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ref/ToDoList_Front.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/ref/ToDoList_Front.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/refint/ToDoList_Front.dll" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/refint/ToDoList_Front.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/Components/Pages/TodoList/CreateItem.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/Components/Pages/TodoList/CreateItem.razor.rz.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/Components/Pages/TodoList/ListItem.razor.rz.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/Components/Pages/TodoList/ListItem.razor.rz.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/bundle/ToDoList_Front.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/bundle/ToDoList_Front.styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/projectbundle/ToDoList_Front.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList_Front/obj/Debug/net8.0/scopedcss/projectbundle/ToDoList_Front.bundle.scp.css" afterDir="false" />
-    </list>
+    <list default="true" id="c222aa33-b9a3-4793-81ba-5a9d74dae1c0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -35,14 +19,16 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,7 +39,11 @@
       <updated>1714373539973</updated>
       <workItem from="1714379861294" duration="1000" />
       <workItem from="1714874988337" duration="2000" />
+      <workItem from="1714881398014" duration="19000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

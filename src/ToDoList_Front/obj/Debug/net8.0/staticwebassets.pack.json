@@ -21,6 +21,18 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\scripts\\beep.js",
+      "PackagePath": "staticwebassets\\scripts\\beep.js"
+    },
+    {
+      "Id": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\sounds\\big-beep.mp3",
+      "PackagePath": "staticwebassets\\sounds\\big-beep.mp3"
+    },
+    {
+      "Id": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\sounds\\small-beep.mp3",
+      "PackagePath": "staticwebassets\\sounds\\small-beep.mp3"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ToDoList_Front.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
