@@ -164,7 +164,8 @@ main[b-1xjj62kv44] {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    width: 250px;
+    width: 205px;
+    height: 85px;
     padding: 6px 10px 10px 10px;
 
     background-color: #fff;
@@ -190,26 +191,70 @@ p[b-0luzft0ica] {
 }
 
 .timeToOpen[b-0luzft0ica] {
-    height: 58px;
-    font-size: 2.4em;
+    font-size: 2em;
     font-weight: bold;
     margin-bottom: -8px;
+    color: #111111;
+}
+
+.minLeft[b-0luzft0ica] {
+    height: 24px;
+    font-size: 1em;
 }
 
 p.openNow[b-0luzft0ica] {
-    height: 58px;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: -8px;
+    margin-top: 4px;
+    color: #111111;
+}
+
+.time[b-0luzft0ica] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px 4px 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    gap: 6px;
+    cursor: pointer;    
+}
+
+.time:hover[b-0luzft0ica] {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.time:active[b-0luzft0ica] {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.bi[b-0luzft0ica] {
+    color: #656565;
+}
+
+.bi-bell-slash-fill[b-0luzft0ica] {
+    color: #880000;
+}
+
+.bi-bell-fill[b-0luzft0ica] {
+    margin-top: 1px;
 }
 
 .currentTime[b-0luzft0ica] {
-    font-size: 1.5em;
-    color: #757575;
+    font-size: 1em;
+    margin-top: 1px;
+    color: #505050;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .description[b-0luzft0ica] {
-    margin-top: 12px;
+    margin-top: -4px;
+    margin-bottom: 8px;
     font-size: 0.92em;
     color: #ababab;
 }

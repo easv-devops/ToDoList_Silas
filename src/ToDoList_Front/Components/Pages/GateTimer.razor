@@ -7,6 +7,7 @@
 <PageTitle>GATE Timer</PageTitle>
 
 <div class="page">
+    <p class="description">Timer for The Gold Saucer GATE in FFXIV</p>
     <div class="box @_state">
         @if (_state == "openNow")
         {
@@ -15,10 +16,25 @@
         else
         {
             <p class="timeToOpen">@_timeToOpen</p>
+            @if (_state == "soonOpen")
+            {
+                <p class="minLeft">minute left</p>
+            } else {
+                <p class="minLeft">minutes left</p>
+            }
+        }
+    </div>
+    <div class="time" @onclick="ToggleMute">
+        @if (_muted)
+        {
+            <i class="bi bi-bell-slash-fill"></i>
+        }
+        else
+        {
+            <i class="bi bi-bell-fill"></i>
         }
         <p class="currentTime">@_currentTime.ToString("HH:mm:ss")</p>
     </div>
-    <p class="description">Timer for The Gold Saucer GATE in Final Fantasy XIV.</p>
 </div>
 
 @code {
@@ -26,6 +42,7 @@
     private int _timeToOpen;
     private Timer? _timer;
     private string _state = "";
+    private bool _muted;
 
     protected override void OnInitialized()
     {
@@ -42,25 +59,24 @@
             _timeToOpen = 20 - _currentTime.Minute % 20;
             
             if (_timeToOpen == 20)
-            {
                 _state = "openNow";
-            }
             else if (_timeToOpen == 1)
-            {
                 _state = "soonOpen";
-            }
             else
-            {
                 _state = "";
-            }
             
-            if (_state == "openNow" && _currentTime.Second == 0)
+            if (_state == "openNow" && _currentTime.Second == 0 && !_muted)
                 await Js.InvokeVoidAsync("playBigBeep");
-            else if (_state == "soonOpen" && _currentTime.Second == 0)
+            else if (_state == "soonOpen" && _currentTime.Second == 0 && !_muted)
                 await Js.InvokeVoidAsync("playSmallBeep");
 
             StateHasChanged();
         });
+    }
+    
+    private void ToggleMute()
+    {
+        _muted = !_muted;
     }
 
     public void Dispose()

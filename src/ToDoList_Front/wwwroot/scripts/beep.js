@@ -7,6 +7,6 @@ function playBigBeep() {
 }
 
 function playSmallBeep() {
-    smallBeep.volume = 0.5;
+    smallBeep.volume = 0.55;
     smallBeep.play();
 }
