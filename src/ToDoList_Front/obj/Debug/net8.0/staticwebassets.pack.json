@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\scripts\\beep.js"
     },
     {
+      "Id": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\scripts\\site.js",
+      "PackagePath": "staticwebassets\\scripts\\site.js"
+    },
+    {
       "Id": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\sounds\\big-beep.mp3",
       "PackagePath": "staticwebassets\\sounds\\big-beep.mp3"
     },

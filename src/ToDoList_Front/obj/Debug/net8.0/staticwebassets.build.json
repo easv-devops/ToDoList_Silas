@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xibqx5t5VxIVfgW4EqnK2NtTCEKuz4S2rJCL0lHVE4M=",
+  "Hash": "CPLqSuVC/f9IABKnfM1zu/GTJ3OXxmXF/OxyJfaRwrQ=",
   "Source": "ToDoList_Front",
   "BasePath": "_content/ToDoList_Front",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scripts\\beep.js"
+    },
+    {
+      "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\scripts\\site.js",
+      "SourceId": "ToDoList_Front",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\",
+      "BasePath": "_content/ToDoList_Front",
+      "RelativePath": "scripts/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scripts\\site.js"
     },
     {
       "Identity": "C:\\Users\\aerom\\RiderProjects\\ToDoList\\src\\ToDoList_Front\\wwwroot\\sounds\\big-beep.mp3",

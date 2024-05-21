@@ -7,33 +7,46 @@
 <PageTitle>GATE Timer</PageTitle>
 
 <div class="page">
-    <p class="description">Timer for The Gold Saucer GATE in FFXIV</p>
-    <div class="box @_state">
-        @if (_state == "openNow")
+    <div class="darkmode @(_isDark ? "dark" : "")" @onclick="ToggleTheme">
+        @if (_isDark)
         {
-            <p class="openNow">OPEN NOW</p>
+            <i class="bi bi-moon-stars-fill"></i>
         }
         else
         {
-            <p class="timeToOpen">@_timeToOpen</p>
-            @if (_state == "soonOpen")
-            {
-                <p class="minLeft">minute left</p>
-            } else {
-                <p class="minLeft">minutes left</p>
-            }
+            <i class="bi bi-sun-fill"></i>
         }
     </div>
-    <div class="time" @onclick="ToggleMute">
-        @if (_muted)
-        {
-            <i class="bi bi-bell-slash-fill"></i>
-        }
-        else
-        {
-            <i class="bi bi-bell-fill"></i>
-        }
-        <p class="currentTime">@_currentTime.ToString("HH:mm:ss")</p>
+    <div class="content">
+        <div class="box @_state @(_isDark ? "dark" : "")">
+            @if (_state == "openNow")
+            {
+                <p class="openNow @(_isDark ? "dark" : "")">OPEN NOW</p>
+            }
+            else
+            {
+                <p class="timeToOpen @(_isDark ? "dark" : "")">@_timeToOpen</p>
+                @if (_state == "soonOpen")
+                {
+                    <p class="minLeft @(_isDark ? "dark" : "")">minute left</p>
+                }
+                else
+                {
+                    <p class="minLeft @(_isDark ? "dark" : "")">minutes left</p>
+                }
+            }
+        </div>
+        <div class="time @(_isDark ? "dark" : "")" @onclick="ToggleMute">
+            @if (_muted)
+            {
+                <i class="bi bi-bell-slash-fill @(_isDark ? "dark" : "")"></i>
+            }
+            else
+            {
+                <i class="bi bi-bell-fill @(_isDark ? "dark" : "")"></i>
+            }
+            <p class="currentTime @(_isDark ? "dark" : "")">@_currentTime.ToString("HH:mm:ss")</p>
+        </div>
     </div>
 </div>
 
@@ -43,6 +56,7 @@
     private Timer? _timer;
     private string _state = "";
     private bool _muted;
+    private bool _isDark;
 
     protected override void OnInitialized()
     {
@@ -77,6 +91,13 @@
     private void ToggleMute()
     {
         _muted = !_muted;
+    }
+    
+    private async Task ToggleTheme()
+    {
+        _isDark = !_isDark;
+        await Js.InvokeVoidAsync("switchTheme", _isDark);
+        StateHasChanged();
     }
 
     public void Dispose()

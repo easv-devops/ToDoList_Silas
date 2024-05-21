@@ -1,8 +1,48 @@
 .page[b-0luzft0ica] {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.content[b-0luzft0ica] {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.darkmode[b-0luzft0ica] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    align-self: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.darkmode i[b-0luzft0ica] {
+    font-size: 1.2em;
+    margin-top: 2px;
+}
+
+.darkmode:hover[b-0luzft0ica] {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.darkmode:active[b-0luzft0ica] {
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 .box[b-0luzft0ica] {
@@ -81,11 +121,15 @@ p.openNow[b-0luzft0ica] {
 }
 
 .bi-bell-slash-fill[b-0luzft0ica] {
-    color: #880000;
+    color: #b00707;
 }
 
 .bi-bell-fill[b-0luzft0ica] {
     margin-top: 1px;
+}
+
+.bi-sun-fill[b-0luzft0ica] {
+    color: #b6b6b6;
 }
 
 .currentTime[b-0luzft0ica] {
@@ -99,9 +143,68 @@ p.openNow[b-0luzft0ica] {
     user-select: none; /* Standard */
 }
 
-.description[b-0luzft0ica] {
-    margin-top: -4px;
-    margin-bottom: 8px;
-    font-size: 0.92em;
-    color: #ababab;
+/* Dark mode */
+
+.box.dark[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
+}
+
+.box.openNow.dark[b-0luzft0ica] {
+    border-color: #00c0d2;
+    box-shadow: 0 2px 7px rgba(0, 225, 255, 0);
+}
+
+.box.soonOpen.dark[b-0luzft0ica] {
+    border-color: #d29700;
+    box-shadow: 0 2px 7px rgba(255, 174, 0, 0);
+}
+
+p.dark[b-0luzft0ica] {
+    color: #fff;
+}
+
+.time.dark[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.time.dark:hover[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.time.dark:active[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.darkmode.dark[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.darkmode.dark:hover[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.darkmode.dark:active[b-0luzft0ica] {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bi.dark[b-0luzft0ica] {
+    color: #fff;
+}
+
+.bi-bell-slash-fill.dark[b-0luzft0ica] {
+    color: #d26c6c;
+}
+
+.bi-bell-fill.dark[b-0luzft0ica] {
+    color: #cbcbcb;
+}
+
+.bi-moon-stars-fill[b-0luzft0ica] {
+    color: #777777;
+}
+
+.currentTime.dark[b-0luzft0ica] {
+    color: #e3e3e3;
 }
