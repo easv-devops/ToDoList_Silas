@@ -146,8 +146,8 @@ p.openNow {
 /* Dark mode */
 
 .box.dark {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
 }
 
@@ -198,13 +198,13 @@ p.dark {
 }
 
 .bi-bell-fill.dark {
-    color: #cbcbcb;
+    color: #c5c5c5;
 }
 
 .bi-moon-stars-fill {
-    color: #777777;
+    color: #656565;
 }
 
 .currentTime.dark {
-    color: #e3e3e3;
+    color: #dadada;
 }
