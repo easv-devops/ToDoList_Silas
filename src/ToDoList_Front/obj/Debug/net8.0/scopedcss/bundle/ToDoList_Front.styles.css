@@ -300,8 +300,8 @@ p.openNow[b-0luzft0ica] {
 /* Dark mode */
 
 .box.dark[b-0luzft0ica] {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.075);
+    border-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
 }
 
@@ -324,11 +324,11 @@ p.dark[b-0luzft0ica] {
 }
 
 .time.dark:hover[b-0luzft0ica] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .time.dark:active[b-0luzft0ica] {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
 .darkmode.dark[b-0luzft0ica] {
@@ -336,11 +336,11 @@ p.dark[b-0luzft0ica] {
 }
 
 .darkmode.dark:hover[b-0luzft0ica] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .darkmode.dark:active[b-0luzft0ica] {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
 .bi.dark[b-0luzft0ica] {
@@ -356,7 +356,7 @@ p.dark[b-0luzft0ica] {
 }
 
 .bi-moon-stars-fill[b-0luzft0ica] {
-    color: #656565;
+    color: #606060;
 }
 
 .currentTime.dark[b-0luzft0ica] {

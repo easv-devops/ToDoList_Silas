@@ -146,8 +146,8 @@ p.openNow {
 /* Dark mode */
 
 .box.dark {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.075);
+    border-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0);
 }
 
@@ -170,11 +170,11 @@ p.dark {
 }
 
 .time.dark:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .time.dark:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
 .darkmode.dark {
@@ -182,11 +182,11 @@ p.dark {
 }
 
 .darkmode.dark:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .darkmode.dark:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
 .bi.dark {
@@ -202,7 +202,7 @@ p.dark {
 }
 
 .bi-moon-stars-fill {
-    color: #656565;
+    color: #606060;
 }
 
 .currentTime.dark {
