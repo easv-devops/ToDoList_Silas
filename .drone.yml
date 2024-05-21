@@ -38,6 +38,9 @@ steps:
       repo: kerosilas/todolist-api
       tags:
         - staging
+    retry:
+      limit: 3
+      delay: 30
 
   - name: publish web
     image: plugins/docker
